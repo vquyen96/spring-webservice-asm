@@ -26,5 +26,11 @@
         <property name="hibernate.dbcp.minIdle">5</property>
         <property name="hibernate.dbcp.maxWaitMillis">-1</property>
         <mapping class="entity.User" />
+        <mapping class="entity.Category" />
+        <mapping class="entity.CommentImage" />
+        <mapping class="entity.CommentPlace" />
+        <mapping class="entity.CommentPlaceImage" />
+        <mapping class="entity.Place" />
+        <mapping class="entity.PlaceImage" />
     </session-factory>
 </hibernate-configuration>

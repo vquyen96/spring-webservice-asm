@@ -27,6 +27,7 @@ public class User {
         this.createdAt = System.currentTimeMillis();
         this.updatedAt = System.currentTimeMillis();
         this.status = 1;
+        this.role = 1;
     }
 
     public int getId() {
