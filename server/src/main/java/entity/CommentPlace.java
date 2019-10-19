@@ -8,6 +8,7 @@ public class CommentPlace {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "comment_place_id")
     private int id;
     private String title;
 
@@ -78,5 +79,21 @@ public class CommentPlace {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public Place getPlace() {
+        return place;
+    }
+
+    public void setPlace(Place place) {
+        this.place = place;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }

@@ -8,6 +8,7 @@ public class CommentPlaceImage {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "comment_place_image_id")
     private int id;
     private String urlIma;
     private long createdAt;
@@ -62,5 +63,13 @@ public class CommentPlaceImage {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public CommentPlace getCommentPlace() {
+        return commentPlace;
+    }
+
+    public void setCommentPlace(CommentPlace commentPlace) {
+        this.commentPlace = commentPlace;
     }
 }

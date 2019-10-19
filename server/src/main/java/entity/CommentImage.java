@@ -6,6 +6,9 @@ import javax.persistence.*;
 @Table(name = "comment_image")
 public class CommentImage {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "comment_image_id")
     private int id;
     private String title;
 
@@ -76,5 +79,21 @@ public class CommentImage {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public PlaceImage getPlaceImage() {
+        return placeImage;
+    }
+
+    public void setPlaceImage(PlaceImage placeImage) {
+        this.placeImage = placeImage;
     }
 }

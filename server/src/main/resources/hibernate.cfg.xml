@@ -30,6 +30,8 @@
         <mapping class="entity.CommentImage" />
         <mapping class="entity.CommentPlace" />
         <mapping class="entity.CommentPlaceImage" />
+        <mapping class="entity.RatePlaceImage" />
+        <mapping class="entity.RatePlace" />
         <mapping class="entity.Place" />
         <mapping class="entity.PlaceImage" />
     </session-factory>
