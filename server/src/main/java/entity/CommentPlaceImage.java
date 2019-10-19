@@ -1,11 +1,9 @@
 package entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@Table(name = "comment_place_image")
 public class CommentPlaceImage {
 
     @Id
@@ -13,6 +11,14 @@ public class CommentPlaceImage {
     private int id;
     private String urlIma;
     private long createdAt;
+
+    @ManyToOne
+    @JoinColumn(name = "comment_place_id")
+    private CommentPlace commentPlace;
+
+    public CommentPlaceImage() {
+        this.createdAt = System.currentTimeMillis();
+    }
 
     public int getId() {
         return id;
@@ -28,5 +34,13 @@ public class CommentPlaceImage {
 
     public void setUrlIma(String urlIma) {
         this.urlIma = urlIma;
+    }
+
+    public long getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(long createdAt) {
+        this.createdAt = createdAt;
     }
 }

@@ -1,11 +1,9 @@
 package entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@Table(name = "comment_place")
 public class CommentPlace {
 
     @Id
@@ -14,6 +12,14 @@ public class CommentPlace {
     private String title;
     private String content;
     private String comment_col;
+
+    @ManyToOne
+    @JoinColumn(name = "place_id")
+    private Place place;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 
     private long createdAt;
 
