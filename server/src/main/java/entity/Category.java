@@ -1,9 +1,6 @@
 package entity;
 
-import org.hibernate.annotations.Cascade;
-
 import javax.persistence.*;
-import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -14,11 +11,15 @@ public class Category {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
+    private String status;
 
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "category")
-    private Set<Place> places = new HashSet<Place>();
+    @OneToMany(fetch = FetchType.LAZY,
+            cascade = {CascadeType.REFRESH, CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST},
+            mappedBy = "category")
+    private Set<Place> places;
 
     public Category() {
+        this.status = StatusEnum.ACTIVE.name();
     }
 
     public int getId() {
@@ -35,5 +36,13 @@ public class Category {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

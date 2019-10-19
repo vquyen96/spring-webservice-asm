@@ -11,6 +11,8 @@ public class CommentPlaceImage {
     private int id;
     private String urlIma;
     private long createdAt;
+    private long updatedAt;
+    private String status;
 
     @ManyToOne
     @JoinColumn(name = "comment_place_id")
@@ -18,6 +20,8 @@ public class CommentPlaceImage {
 
     public CommentPlaceImage() {
         this.createdAt = System.currentTimeMillis();
+        this.updatedAt = System.currentTimeMillis();
+        this.status = StatusEnum.ACTIVE.name();
     }
 
     public int getId() {
@@ -42,5 +46,21 @@ public class CommentPlaceImage {
 
     public void setCreatedAt(long createdAt) {
         this.createdAt = createdAt;
+    }
+
+    public long getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(long updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

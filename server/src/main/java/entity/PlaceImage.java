@@ -13,11 +13,16 @@ public class PlaceImage {
     private String urlIma;
     private float rating;
     private long createdAt;
+    private long updatedAt;
+    private String status;
 
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.LAZY,
+            cascade = {CascadeType.REFRESH, CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST})
     private Set<RatePlaceImage> ratePlaceImages;
 
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "placeImage")
+    @OneToMany(fetch = FetchType.LAZY,
+            cascade = {CascadeType.REFRESH, CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST},
+            mappedBy = "placeImage")
     private Set<CommentImage> commentImages;
 
     @ManyToOne
@@ -26,6 +31,8 @@ public class PlaceImage {
 
     public PlaceImage() {
         this.createdAt = System.currentTimeMillis();
+        this.createdAt = System.currentTimeMillis();
+        this.status = StatusEnum.ACTIVE.name();
     }
 
     public int getId() {
@@ -58,5 +65,21 @@ public class PlaceImage {
 
     public void setCreatedAt(long createdAt) {
         this.createdAt = createdAt;
+    }
+
+    public long getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(long updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

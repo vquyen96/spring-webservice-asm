@@ -10,8 +10,9 @@ public class CommentPlace {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String title;
+
+    @Column(columnDefinition = "TEXT")
     private String content;
-    private String comment_col;
 
     @ManyToOne
     @JoinColumn(name = "place_id")
@@ -22,9 +23,13 @@ public class CommentPlace {
     private User user;
 
     private long createdAt;
+    private long updatedAt;
+    private String status;
 
     public CommentPlace() {
         this.createdAt = System.currentTimeMillis();
+        this.updatedAt = System.currentTimeMillis();
+        this.status = StatusEnum.ACTIVE.name();
     }
 
     public int getId() {
@@ -51,19 +56,27 @@ public class CommentPlace {
         this.content = content;
     }
 
-    public String getComment_col() {
-        return comment_col;
-    }
-
-    public void setComment_col(String comment_col) {
-        this.comment_col = comment_col;
-    }
-
     public long getCreatedAt() {
         return createdAt;
     }
 
     public void setCreatedAt(long createdAt) {
         this.createdAt = createdAt;
+    }
+
+    public long getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(long updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }
