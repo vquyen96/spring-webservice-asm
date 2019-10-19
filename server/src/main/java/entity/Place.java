@@ -9,6 +9,7 @@ public class Place {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "place_id")
     private int id;
     private String name;
     private int summary;
@@ -112,5 +113,45 @@ public class Place {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public Set<PlaceImage> getPlaceImages() {
+        return placeImages;
+    }
+
+    public void setPlaceImages(Set<PlaceImage> placeImages) {
+        this.placeImages = placeImages;
+    }
+
+    public Set<RatePlace> getRatePlaces() {
+        return ratePlaces;
+    }
+
+    public void setRatePlaces(Set<RatePlace> ratePlaces) {
+        this.ratePlaces = ratePlaces;
+    }
+
+    public Set<CommentPlace> getCommentPlaces() {
+        return commentPlaces;
+    }
+
+    public void setCommentPlaces(Set<CommentPlace> commentPlaces) {
+        this.commentPlaces = commentPlaces;
     }
 }

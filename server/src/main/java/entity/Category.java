@@ -9,6 +9,7 @@ public class Category {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "category_id")
     private int id;
     private String name;
     private String status;
@@ -44,5 +45,13 @@ public class Category {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public Set<Place> getPlaces() {
+        return places;
+    }
+
+    public void setPlaces(Set<Place> places) {
+        this.places = places;
     }
 }

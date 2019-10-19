@@ -9,6 +9,7 @@ public class PlaceImage {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "place_image_id")
     private int id;
     private String urlIma;
     private float rating;
@@ -17,7 +18,8 @@ public class PlaceImage {
     private String status;
 
     @OneToMany(fetch = FetchType.LAZY,
-            cascade = {CascadeType.REFRESH, CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST})
+            cascade = {CascadeType.REFRESH, CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST},
+            mappedBy = "placeImage")
     private Set<RatePlaceImage> ratePlaceImages;
 
     @OneToMany(fetch = FetchType.LAZY,
@@ -81,5 +83,29 @@ public class PlaceImage {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public Set<RatePlaceImage> getRatePlaceImages() {
+        return ratePlaceImages;
+    }
+
+    public void setRatePlaceImages(Set<RatePlaceImage> ratePlaceImages) {
+        this.ratePlaceImages = ratePlaceImages;
+    }
+
+    public Set<CommentImage> getCommentImages() {
+        return commentImages;
+    }
+
+    public void setCommentImages(Set<CommentImage> commentImages) {
+        this.commentImages = commentImages;
+    }
+
+    public Place getPlace() {
+        return place;
+    }
+
+    public void setPlace(Place place) {
+        this.place = place;
     }
 }

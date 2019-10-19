@@ -6,17 +6,18 @@ import javax.persistence.*;
 @Table(name = "rate_place")
 public class RatePlace {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
     private int rate_point;
     private long createdAt;
     private long updatedAt;
     private String status;
 
-    @Id
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
     @JoinColumn(name = "place_id")
     private Place place;
 
-    @Id
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
@@ -25,6 +26,14 @@ public class RatePlace {
         this.createdAt = System.currentTimeMillis();
         this.updatedAt = System.currentTimeMillis();
         this.status = StatusEnum.ACTIVE.name();
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public int getRate_point() {
@@ -57,5 +66,21 @@ public class RatePlace {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public Place getPlace() {
+        return place;
+    }
+
+    public void setPlace(Place place) {
+        this.place = place;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }

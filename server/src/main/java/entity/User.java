@@ -9,6 +9,7 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "user_id")
     private int id;
     private String username;
     private String email;
@@ -22,17 +23,21 @@ public class User {
     private Set<Place> places;
 
     @OneToMany(fetch = FetchType.LAZY,
-            cascade = {CascadeType.REFRESH, CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST})
+            cascade = {CascadeType.REFRESH, CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST},
+            mappedBy = "user")
     private Set<RatePlaceImage> ratePlaceImages;
 
     @OneToMany(fetch = FetchType.LAZY,
-            cascade = {CascadeType.REFRESH, CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST})
+            cascade = {CascadeType.REFRESH, CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST},
+            mappedBy = "user")
     private Set<RatePlace> ratePlaces;
 
     @OneToMany(fetch = FetchType.LAZY,
             cascade = {CascadeType.REFRESH, CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST},
             mappedBy = "user")
-    private Set<CommentPlace> commentPlaces;    @OneToMany(fetch = FetchType.LAZY,
+    private Set<CommentPlace> commentPlaces;
+
+    @OneToMany(fetch = FetchType.LAZY,
             cascade = {CascadeType.REFRESH, CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST},
             mappedBy = "user")
     private Set<CommentImage> commentImages;
@@ -118,5 +123,45 @@ public class User {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public Set<Place> getPlaces() {
+        return places;
+    }
+
+    public void setPlaces(Set<Place> places) {
+        this.places = places;
+    }
+
+    public Set<RatePlaceImage> getRatePlaceImages() {
+        return ratePlaceImages;
+    }
+
+    public void setRatePlaceImages(Set<RatePlaceImage> ratePlaceImages) {
+        this.ratePlaceImages = ratePlaceImages;
+    }
+
+    public Set<RatePlace> getRatePlaces() {
+        return ratePlaces;
+    }
+
+    public void setRatePlaces(Set<RatePlace> ratePlaces) {
+        this.ratePlaces = ratePlaces;
+    }
+
+    public Set<CommentPlace> getCommentPlaces() {
+        return commentPlaces;
+    }
+
+    public void setCommentPlaces(Set<CommentPlace> commentPlaces) {
+        this.commentPlaces = commentPlaces;
+    }
+
+    public Set<CommentImage> getCommentImages() {
+        return commentImages;
+    }
+
+    public void setCommentImages(Set<CommentImage> commentImages) {
+        this.commentImages = commentImages;
     }
 }

@@ -6,17 +6,18 @@ import javax.persistence.*;
 @Table(name = "rate_place_image")
 public class RatePlaceImage {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
     private int rate_point;
     private long createdAt;
     private long updatedAt;
     private String status;
 
-    @Id
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
     @JoinColumn(name = "user_id")
     private User user;
 
-    @Id
     @ManyToOne
     @JoinColumn(name = "place_image_id")
     private PlaceImage placeImage;
@@ -25,6 +26,14 @@ public class RatePlaceImage {
         this.createdAt = System.currentTimeMillis();
         this.updatedAt = System.currentTimeMillis();
         this.status = StatusEnum.ACTIVE.name();
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public int getRate_point() {
@@ -57,5 +66,21 @@ public class RatePlaceImage {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public PlaceImage getPlaceImage() {
+        return placeImage;
+    }
+
+    public void setPlaceImage(PlaceImage placeImage) {
+        this.placeImage = placeImage;
     }
 }
