@@ -12,6 +12,8 @@ public class Place {
     private int id;
     private String name;
     private int summary;
+    
+    @Column(columnDefinition = "TEXT")
     private String description;
     private float rating;
 
@@ -23,21 +25,29 @@ public class Place {
     @JoinColumn(name = "user_id")
     private User user;
 
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "place")
+    @OneToMany(fetch = FetchType.LAZY,
+            cascade = {CascadeType.REFRESH, CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST},
+            mappedBy = "place")
     private Set<PlaceImage> placeImages;
 
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "place")
+    @OneToMany(fetch = FetchType.LAZY,
+            cascade = {CascadeType.REFRESH, CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST},
+            mappedBy = "place")
     private Set<RatePlace> ratePlaces;
 
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "place")
+    @OneToMany(fetch = FetchType.LAZY,
+            cascade = {CascadeType.REFRESH, CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST},
+            mappedBy = "place")
     private Set<CommentPlace> commentPlaces;
 
     private long createdAt;
     private long updatedAt;
+    private String status;
 
     public Place() {
         this.createdAt = System.currentTimeMillis();
         this.updatedAt = System.currentTimeMillis();
+        this.status = StatusEnum.ACTIVE.name();
     }
 
     public int getId() {
@@ -94,5 +104,13 @@ public class Place {
 
     public void setUpdatedAt(long updatedAt) {
         this.updatedAt = updatedAt;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }
