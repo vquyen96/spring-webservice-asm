@@ -1,11 +1,10 @@
 package entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Set;
 
 @Entity
+@Table(name = "place_image")
 public class PlaceImage {
 
     @Id
@@ -15,7 +14,18 @@ public class PlaceImage {
     private float rating;
     private long createdAt;
 
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private Set<RatePlaceImage> ratePlaceImages;
+
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "placeImage")
+    private Set<CommentImage> commentImages;
+
+    @ManyToOne
+    @JoinColumn(name = "place_id")
+    private Place place;
+
     public PlaceImage() {
+        this.createdAt = System.currentTimeMillis();
     }
 
     public int getId() {

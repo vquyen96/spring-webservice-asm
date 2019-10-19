@@ -1,13 +1,26 @@
 package entity;
 
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "comment_image")
 public class CommentImage {
 
     private int id;
     private String title;
     private String content;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
+
+    @ManyToOne
+    @JoinColumn(name = "place_image_id")
+    private PlaceImage placeImage;
+
     private long createdAt;
     private long updatedAt;
 

@@ -1,11 +1,10 @@
 package entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Set;
 
 @Entity
+@Table(name = "place")
 public class Place {
 
     @Id
@@ -15,6 +14,23 @@ public class Place {
     private int summary;
     private String description;
     private float rating;
+
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+    private Category category;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
+
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "place")
+    private Set<PlaceImage> placeImages;
+
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "place")
+    private Set<RatePlace> ratePlaces;
+
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "place")
+    private Set<CommentPlace> commentPlaces;
 
     private long createdAt;
     private long updatedAt;
