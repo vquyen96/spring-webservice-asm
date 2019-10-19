@@ -42,4 +42,14 @@ public class HomeController {
     public String single_listing(Model model) {
         return "single_listing";
     }
+
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    public String login(Model model) {
+        return "login";
+    }
+
+    @RequestMapping(value = "/register", method = RequestMethod.GET)
+    public String register(Model model) {
+        return "register";
+    }
 }
