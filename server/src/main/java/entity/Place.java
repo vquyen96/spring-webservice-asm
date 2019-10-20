@@ -12,7 +12,7 @@ public class Place {
     @Column(name = "place_id")
     private int id;
     private String name;
-    private int summary;
+    private String summary;
     
     @Column(columnDefinition = "TEXT")
     private String description;
@@ -67,11 +67,11 @@ public class Place {
         this.name = name;
     }
 
-    public int getSummary() {
+    public String getSummary() {
         return summary;
     }
 
-    public void setSummary(int summary) {
+    public void setSummary(String summary) {
         this.summary = summary;
     }
 
