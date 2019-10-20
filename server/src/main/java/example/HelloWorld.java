@@ -1,6 +1,7 @@
 package example;
 import com.sun.net.httpserver.HttpServer;
 import entity.User;
+import service.CategoryService;
 import service.SignInService;
 import service.SignUpService;
 
@@ -40,6 +41,9 @@ public class HelloWorld {
 
     Endpoint signupEndpoint = Endpoint.create(new SignInService());
     signupEndpoint.publish(httpServer.createContext("/register"));
+
+    Endpoint categoryEndpoint = Endpoint.create(new CategoryService());
+    categoryEndpoint.publish(httpServer.createContext("/category"));
 
     httpServer.start();
     System.out.println("Ờ!");

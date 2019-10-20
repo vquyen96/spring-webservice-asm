@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c66ff55c-fd07-478f-9305-e4d21e2232bf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/service/SignInService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/service/SignUpService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/main/resources/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/main/resources/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/main/resources/templates/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/service/CategoryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/example/HelloWorld.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/example/HelloWorld.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -102,6 +99,7 @@
       <workItem from="1571466994999" duration="3409000" />
       <workItem from="1571578018967" duration="3095000" />
       <workItem from="1571581209915" duration="228000" />
+      <workItem from="1571585338448" duration="1081000" />
     </task>
     <servers />
   </component>
