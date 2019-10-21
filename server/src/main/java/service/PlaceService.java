@@ -1,6 +1,8 @@
 package service;
 
 import entity.Place;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
 import util.HibernateUtil;
 
 import javax.jws.WebMethod;
