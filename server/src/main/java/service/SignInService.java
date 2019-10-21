@@ -20,7 +20,7 @@ public class SignInService {
             User user = findByUsername(username.toLowerCase().trim());
 
             if (user != null) {
-                if (password == PasswordUtil.generateSecurePassword(user.getPassword(), user.getSalt())) {
+                if (PasswordUtil.verifyUserPassword(password, user.getPassword(), user.getSalt())) {
                     return "Login success.";
                 } else {
                     return "Username or password invalid.";
