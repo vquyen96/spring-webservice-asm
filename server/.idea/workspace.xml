@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c66ff55c-fd07-478f-9305-e4d21e2232bf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/service/CategoryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/example/HelloWorld.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/example/HelloWorld.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/server.iml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,11 +24,14 @@
     <option name="importingSettings">
       <MavenImportingSettings>
         <option name="importAutomatically" value="true" />
+        <option name="vmOptionsForImporter" value="-Xmx768m" />
       </MavenImportingSettings>
     </option>
   </component>
   <component name="ProjectId" id="1SPZ394NYLZX6JiHp1zaEeWhe87" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -42,10 +43,18 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.importing" />
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn clean" />
+      <command value="mvn compile" />
+    </option>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -107,6 +116,7 @@
       <workItem from="1571578018967" duration="3095000" />
       <workItem from="1571581209915" duration="228000" />
       <workItem from="1571585338448" duration="1081000" />
+      <workItem from="1571627405825" duration="2292000" />
     </task>
     <servers />
   </component>

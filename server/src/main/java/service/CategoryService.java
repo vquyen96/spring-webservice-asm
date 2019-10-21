@@ -13,22 +13,6 @@ import java.util.logging.Logger;
 
 @WebService
 public class CategoryService {
-    private static Logger LOGGER = Logger.getLogger(CategoryService.class.getSimpleName());
-    @WebMethod
-    public void save(Category category) {
-        Transaction transaction = null;
-        try (Session session = HibernateUtil.getSession()) {
-            transaction = session.beginTransaction();
-            session.saveOrUpdate(category);
-            transaction.commit();
-            LOGGER.log(Level.INFO, String.format("Save category success with name %s", category.getName()));
-        } catch (Exception e) {
-            if (transaction != null) {
-                transaction.rollback();
-            }
-            LOGGER.log(Level.SEVERE, String.format("Save category error, stack trace"), e);
-        }
-    }
 
     @WebMethod
     public List<Category> findAll() {
