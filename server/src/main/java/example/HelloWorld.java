@@ -44,6 +44,6 @@ public class HelloWorld {
     categoryEndpoint.publish(httpServer.createContext("/category"));
 
     httpServer.start();
-    System.out.println("Ờ!");
+    System.out.println("Service started!");
   }
 }
