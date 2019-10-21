@@ -28,13 +28,13 @@ public class SignInService {
             } else {
                 return "Username or password invalid.";
             }
-            transaction.commit();
         } catch (Exception e) {
             if (transaction != null) {
                 transaction.rollback();
             }
             e.printStackTrace();
         }
+        return "Something went wrong, please try again.";
     }
 
     @WebMethod
