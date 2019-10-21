@@ -1,11 +1,9 @@
 package service;
 
 import entity.Category;
-import entity.User;
+import util.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import util.HibernateUtil;
-
 import javax.jws.WebMethod;
 import javax.jws.WebService;
 import java.util.ArrayList;
@@ -36,7 +34,7 @@ public class CategoryService {
     public List<Category> findAll() {
         List<Category> categories = new ArrayList<>();
         try (Session session = HibernateUtil.getSession()) {
-            categories = session.createQuery("from Category", Category.class).list();
+            categories = session.createQuery("from category", Category.class).list();
         } catch (Exception e) {
             LOGGER.log(Level.SEVERE, String.format("Can not findAll category, stack trace"), e);
         }
