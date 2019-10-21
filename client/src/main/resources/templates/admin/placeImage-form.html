@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html lang="en">
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
@@ -17,10 +18,42 @@
     <link rel="stylesheet" th:href="@{../admin-style/vendor2/fonts/flag-icon-css/flag-icon.min.css}">
     <title>Concept - Bootstrap 4 Admin Dashboard Template</title>
 </head>
-
 <body>
 
 <div th:insert="include/header-admin :: header"></div>
+<div class="dashboard-wrapper">
+    <div class="container-fluid dashboard-content">
+        <div class="row">
+            <div class="col-xl-10">
+                <!-- ============================================================== -->
+                <!-- basic form  -->
+                <!-- ============================================================== -->
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="card">
+                                <h5 class="card-header">Create Category</h5>
+                                <div class="card-body">
+                                    <form>
+                                        <div class="form-group">
+                                            <label class="col-form-label">UrlImage</label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-form-label">Rating</label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <div>
+                                            <input type="submit" value="Submit">
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
 <script th:src="@{../admin-style/vendor2/jquery/jquery-3.3.1.min.js}"></script>
 <!-- bootstap bundle js -->
 <script th:src="@{../admin-style/vendor2/bootstrap/js/bootstrap.bundle.js}"></script>
@@ -41,5 +74,4 @@
 <script th:src="@{../admin-style/vendor2/charts/c3charts/C3chartjs.js}"></script>
 <script th:src="@{../admin-style/libs/js/dashboard-ecommerce.js}"></script>
 </body>
-
 </html>
