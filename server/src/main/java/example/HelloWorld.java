@@ -51,6 +51,6 @@ public class HelloWorld {
     ratePlaceService.publish(httpServer.createContext("/rate/place"));
 
     httpServer.start();
-    System.out.println("Ờ!");
+    System.out.println("Service started!");
   }
 }
