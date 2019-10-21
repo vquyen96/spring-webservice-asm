@@ -11,7 +11,6 @@ import javax.xml.ws.Endpoint;
 import java.io.IOException;
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
-import java.net.UnknownHostException;
 
 @WebService()
 public class HelloWorld {
@@ -25,7 +24,6 @@ public class HelloWorld {
     return result;
   }
 
-  @WebMethod
   public void register(User user) {
     signUpService.create(user);
   }

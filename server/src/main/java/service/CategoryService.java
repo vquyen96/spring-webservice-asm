@@ -78,5 +78,4 @@ public class CategoryService {
             LOGGER.log(Level.SEVERE, String.format("Can not delete category with id %s, stack trace", id), e);
         }
     }
-
 }
