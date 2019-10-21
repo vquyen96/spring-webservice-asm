@@ -1,6 +1,8 @@
 package example;
 import com.sun.net.httpserver.HttpServer;
 import entity.User;
+import service.CategoryService;
+import service.PlaceService;
 import service.SignInService;
 import service.SignUpService;
 
@@ -10,7 +12,6 @@ import javax.xml.ws.Endpoint;
 import java.io.IOException;
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
-import java.net.UnknownHostException;
 
 @WebService()
 public class HelloWorld {
@@ -24,7 +25,6 @@ public class HelloWorld {
     return result;
   }
 
-  @WebMethod
   public void register(User user) {
     signUpService.create(user);
   }
@@ -41,7 +41,16 @@ public class HelloWorld {
     Endpoint signupEndpoint = Endpoint.create(new SignInService());
     signupEndpoint.publish(httpServer.createContext("/register"));
 
+    Endpoint categoryEndpoint = Endpoint.create(new CategoryService());
+    categoryEndpoint.publish(httpServer.createContext("/category"));
+
+    Endpoint placeService = Endpoint.create(new PlaceService());
+    placeService.publish(httpServer.createContext("/place"));
+
+    Endpoint ratePlaceService = Endpoint.create(new PlaceService());
+    ratePlaceService.publish(httpServer.createContext("/rate/place"));
+
     httpServer.start();
-    System.out.println("Ờ!");
+    System.out.println("Service started!");
   }
 }
