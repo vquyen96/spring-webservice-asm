@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @WebService
-class CommentPlaceImageService {
+public class CommentPlaceImageService {
 
     @WebMethod
     public void save(CommentPlaceImage commentPlaceImage) {
