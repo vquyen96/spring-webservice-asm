@@ -1,5 +1,6 @@
 package service;
 
+import entity.Place;
 import entity.PlaceImage;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -10,9 +11,13 @@ import javax.jws.WebService;
 import javax.persistence.Query;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 @WebService
 public class PlaceImageService {
+
+    private static Logger LOGGER = Logger.getLogger(PlaceImage.class.getSimpleName());
 
     @WebMethod
     public void save(PlaceImage placeImage) {
@@ -42,6 +47,23 @@ public class PlaceImageService {
             if (transaction != null) {
                 transaction.rollback();
             }
+            return null;
+        }
+    }
+
+    @WebMethod
+    public PlaceImage findById(String id) {
+        Transaction transaction = null;
+        try (Session session = HibernateUtil.getSession()) {
+            transaction = session.beginTransaction();
+            PlaceImage placeImage = session.get(PlaceImage.class, id);
+            transaction.commit();
+            return placeImage;
+        } catch (Exception e) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+            LOGGER.log(Level.SEVERE, String.format("Can not findById %s place, stack trace", id), e);
             return null;
         }
     }

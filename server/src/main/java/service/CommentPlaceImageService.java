@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @WebService
-class CommentPlaceImageService {
+public class CommentPlaceImageService {
 
     @WebMethod
     public void save(CommentPlaceImage commentPlaceImage) {
@@ -29,16 +29,16 @@ class CommentPlaceImageService {
         }
     }
     @WebMethod
-    public List<CommentPlace> findAllCommentOfPlaceByPlaceId(String id) {
-        List<CommentPlace> listComment= new ArrayList<>();
+    public List<CommentPlaceImage> findAllImageOfCommentByCommentId(String id) {
+        List<CommentPlaceImage> commentPlaceImages= new ArrayList<>();
         Transaction transaction = null;
         try (Session session = HibernateUtil.getSession()) {
             transaction = session.beginTransaction();
-            Query query = session.createQuery("from comment_place where place_id = :place_id ");
-            query.setParameter("place_id", id);
-            listComment = ((org.hibernate.query.Query) query).list();
+            Query query = session.createQuery("from comment_place_image where comment_place_id = :comment_place_id ");
+            query.setParameter("comment_place_id", id);
+            commentPlaceImages = ((org.hibernate.query.Query) query).list();
             transaction.commit();
-            return listComment;
+            return commentPlaceImages;
         } catch (Exception e) {
             if (transaction != null) {
                 transaction.rollback();
