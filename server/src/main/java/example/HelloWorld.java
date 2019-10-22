@@ -43,7 +43,7 @@ public class HelloWorld {
     Endpoint signinEndpoint = Endpoint.create(new SignInService());
     signinEndpoint.publish(httpServer.createContext("/login"));
 
-    Endpoint signupEndpoint = Endpoint.create(new SignInService());
+    Endpoint signupEndpoint = Endpoint.create(new SignUpService());
     signupEndpoint.publish(httpServer.createContext("/register"));
 
     Endpoint categoryEndpoint = Endpoint.create(new CategoryService());
