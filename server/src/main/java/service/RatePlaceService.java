@@ -1,6 +1,9 @@
 package service;
 
 import entity.RatePlace;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 import util.HibernateUtil;
 
 import javax.jws.WebMethod;
@@ -21,7 +24,7 @@ public class RatePlaceService {
             transaction = session.beginTransaction();
             session.saveOrUpdate(ratePlace);
             transaction.commit();
-            LOGGER.log(Level.INFO, String.format("Save ratePlace success with name %s", ratePlace.getName()));
+            LOGGER.log(Level.INFO, String.format("Save ratePlace success with name %s", ratePlace.getRate_point()));
         } catch (Exception e) {
             if (transaction != null) {
                 transaction.rollback();
