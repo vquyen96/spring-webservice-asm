@@ -17,14 +17,13 @@
 <div class="main">
 
     <div class="container">
-        <form method="POST" class="appointment-form" id="appointment-form">
+        <form method="post" th:action="@{/home/register}" th:object="${user}" class="appointment-form" id="appointment-form">
             <h2>Register form</h2>
             <div class="form-group-1">
-                <input type="text" name="username" id="username" placeholder="Username" required />
-                <input type="email" name="email" id="email" placeholder="Email" required />
-                <input type="password" name="password" id="password" placeholder="Password" required />
-                <input type="password" name="re_password" id="re_password" placeholder="Re_password" required />
-                <input type="text" name="image" id="image" placeholder="Image Url" required />
+                <input type="text" th:field="*{username}" name="username" id="username" placeholder="Username" required />
+                <input type="email" th:field="*{email}" name="email" id="email" placeholder="Email" required />
+                <input type="password" th:field="*{password}" name="password" id="password" placeholder="Password" required />
+                <input type="text" th:field="*{urlImage}" name="image" id="image" placeholder="Image Url" required />
             </div>
             <div class="form-submit">
                 <input type="submit" name="submit" id="submit" class="submit" value="Submit" />
