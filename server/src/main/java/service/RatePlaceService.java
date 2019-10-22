@@ -34,11 +34,24 @@ public class RatePlaceService {
     }
 
     @WebMethod
-    public List<RatePlace> findAllPlaceId(int id) {
+    public List<RatePlace> findAllByPlaceId(int id) {
         List<RatePlace> listRate = new ArrayList<>();
         try (Session session = HibernateUtil.getSession()) {
             Query query = session.createQuery("from rate_place where place_id = :place_id ");
             query.setParameter("place_id", id);
+            listRate = query.list();
+        } catch (Exception e) {
+            LOGGER.log(Level.SEVERE, String.format("Can not findAll ratePlace, stack trace"), e);
+        }
+        return listRate;
+    }
+
+    @WebMethod
+    public List<RatePlace> findAllByUserId(int id) {
+        List<RatePlace> listRate = new ArrayList<>();
+        try (Session session = HibernateUtil.getSession()) {
+            Query query = session.createQuery("from rate_place where user_id = :user_id ");
+            query.setParameter("user_id", id);
             listRate = query.list();
         } catch (Exception e) {
             LOGGER.log(Level.SEVERE, String.format("Can not findAll ratePlace, stack trace"), e);
