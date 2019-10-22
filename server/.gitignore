@@ -14,8 +14,7 @@ target/
 .sts4-cache
 
 ### IntelliJ IDEA ###
-/.idea
-/.idea/workspace.xml
+.idea
 *.iws
 *.iml
 *.ipr
