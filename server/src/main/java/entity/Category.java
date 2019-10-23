@@ -35,10 +35,10 @@ public class Category {
         return name;
     }
 
-    public String setName(String name) {
-        return name;
+    //bye hi
+    public void setName(String name) {
+        this.name = name;
     }
-
     public String getStatus() {
         return status;
     }

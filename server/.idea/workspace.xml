@@ -2,42 +2,45 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4939b80a-0d63-4c25-b2e1-f055c0217043" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../client/lib/axis.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/lib/commons-discovery-0.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/lib/commons-logging-1.0.4.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/lib/jaxrpc.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/lib/log4j-1.2.8.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/lib/saaj.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/lib/wsdl4j-1.5.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/src/main/java/t1708e/webservice/client/service/SignUpServicePortBindingStub.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/src/main/java/t1708e/webservice/client/service/SignUpServiceServiceLocator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client/src/main/java/t1708e/webservice/client/service/CategoryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client/src/main/java/t1708e/webservice/client/service/CategoryServicePortBindingStub.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client/src/main/java/t1708e/webservice/client/service/CategoryServiceService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client/src/main/java/t1708e/webservice/client/service/CategoryServiceServiceLocator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client/src/main/java/t1708e/webservice/client/service/SignInService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client/src/main/java/t1708e/webservice/client/service/SignInServicePortBindingStub.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client/src/main/java/t1708e/webservice/client/service/SignInServiceService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client/src/main/java/t1708e/webservice/client/service/SignInServiceServiceLocator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client/src/main/java/t1708e/webservice/client/service/category1.wsdl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client/src/main/java/t1708e/webservice/client/service/login1.wsdl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client/src/main/java/t1708e/webservice/client/service/place1.wsdl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/src/main/java/t1708e/webservice/client/config/ServiceConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/main/java/t1708e/webservice/client/config/ServiceConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/main/java/t1708e/webservice/client/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/main/java/t1708e/webservice/client/controller/AdminController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/src/main/java/t1708e/webservice/client/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/main/java/t1708e/webservice/client/controller/HomeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/src/main/java/t1708e/webservice/client/service/Category.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/main/java/t1708e/webservice/client/service/CategoryService.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/src/main/java/t1708e/webservice/client/service/CommentImage.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/src/main/java/t1708e/webservice/client/service/CommentPlace.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/src/main/java/t1708e/webservice/client/service/Place.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/src/main/java/t1708e/webservice/client/service/PlaceImage.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/src/main/java/t1708e/webservice/client/service/RatePlace.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/src/main/java/t1708e/webservice/client/service/RatePlaceImage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/main/java/t1708e/webservice/client/service/SignInService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/main/java/t1708e/webservice/client/service/SignInServicePortBindingStub.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/main/java/t1708e/webservice/client/service/SignInServiceService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/main/java/t1708e/webservice/client/service/SignInServiceServiceLocator.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/src/main/java/t1708e/webservice/client/service/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/main/java/t1708e/webservice/client/service/category.wsdl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/main/java/t1708e/webservice/client/service/register.wsdl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/main/resources/static/styles/css/register.css" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/main/resources/static/styles/css/register.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/main/resources/templates/admin/category-form.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/main/resources/templates/admin/category-form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/main/resources/templates/admin/place-form.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/main/resources/templates/admin/place-form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/main/resources/templates/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/src/main/resources/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/main/resources/templates/register.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/server.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Category.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/example/HelloWorld.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/example/HelloWorld.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/server.kotlin_module" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/META-INF/server.kotlin_module" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/service/SignInService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/service/SignInService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/CategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/CategoryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/PlaceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/PlaceService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/SignUpService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/SignUpService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entity/Category.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/Category.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/example/HelloWorld.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/example/HelloWorld.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/service/CategoryService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/service/CategoryService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/service/PlaceService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/service/PlaceService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/service/SignUpService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/service/SignUpService.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -68,13 +71,15 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../spring-security-combine" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="restartRequiresConfirmation" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -139,6 +144,10 @@
       <option name="presentableId" value="Default" />
       <updated>1571749484170</updated>
       <workItem from="1571749496206" duration="2452000" />
+      <workItem from="1571781981889" duration="2548000" />
+      <workItem from="1571808924549" duration="2301000" />
+      <workItem from="1571813703683" duration="5833000" />
+      <workItem from="1571820159558" duration="2311000" />
     </task>
     <servers />
   </component>
@@ -150,7 +159,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

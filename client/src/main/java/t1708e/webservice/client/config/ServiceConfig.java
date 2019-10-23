@@ -2,8 +2,7 @@ package t1708e.webservice.client.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import t1708e.webservice.client.service.SignUpService;
-import t1708e.webservice.client.service.SignUpServiceServiceLocator;
+import t1708e.webservice.client.service.*;
 
 import javax.xml.rpc.ServiceException;
 
@@ -15,5 +14,19 @@ public class ServiceConfig {
         SignUpServiceServiceLocator  locator = new SignUpServiceServiceLocator();
         SignUpService signUpService = locator.getSignUpServicePort();
         return signUpService;
+    }
+
+    @Bean
+    CategoryService categoryService() throws ServiceException {
+        CategoryServiceServiceLocator  locator = new CategoryServiceServiceLocator();
+        CategoryService categoryService = locator.getCategoryServicePort();
+        return categoryService;
+    }
+
+    @Bean
+    PlaceService placeService() throws ServiceException {
+        PlaceServiceServiceLocator  locator = new PlaceServiceServiceLocator();
+        PlaceService placeService = locator.getPlaceServicePort();
+        return placeService;
     }
 }

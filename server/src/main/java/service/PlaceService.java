@@ -15,6 +15,7 @@ import java.util.logging.Logger;
 @WebService
 public class PlaceService {
     private static Logger LOGGER = Logger.getLogger(PlaceService.class.getSimpleName());
+
     @WebMethod
     public void save(Place place) {
         Transaction transaction = null;
@@ -35,7 +36,7 @@ public class PlaceService {
     public List<Place> findAll() {
         List<Place> places = new ArrayList<>();
         try (Session session = HibernateUtil.getSession()) {
-            places = session.createQuery("from place", Place.class).list();
+            places = session.createQuery("from Place", Place.class).list();
         } catch (Exception e) {
             LOGGER.log(Level.SEVERE, String.format("Can not findAll place, stack trace"), e);
         }
