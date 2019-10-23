@@ -10,20 +10,20 @@ package t1708e.webservice.client.service;
 public class Category  implements java.io.Serializable {
     private int id;
 
-    private String name;
+    private java.lang.String name;
 
-    private service.Place[] places;
+    private t1708e.webservice.client.service.Place[] places;
 
-    private String status;
+    private java.lang.String status;
 
     public Category() {
     }
 
     public Category(
            int id,
-           String name,
-           service.Place[] places,
-           String status) {
+           java.lang.String name,
+           t1708e.webservice.client.service.Place[] places,
+           java.lang.String status) {
            this.id = id;
            this.name = name;
            this.places = places;
@@ -56,7 +56,7 @@ public class Category  implements java.io.Serializable {
      * 
      * @return name
      */
-    public String getName() {
+    public java.lang.String getName() {
         return name;
     }
 
@@ -66,7 +66,7 @@ public class Category  implements java.io.Serializable {
      * 
      * @param name
      */
-    public void setName(String name) {
+    public void setName(java.lang.String name) {
         this.name = name;
     }
 
@@ -76,7 +76,7 @@ public class Category  implements java.io.Serializable {
      * 
      * @return places
      */
-    public service.Place[] getPlaces() {
+    public t1708e.webservice.client.service.Place[] getPlaces() {
         return places;
     }
 
@@ -86,15 +86,15 @@ public class Category  implements java.io.Serializable {
      * 
      * @param places
      */
-    public void setPlaces(service.Place[] places) {
+    public void setPlaces(t1708e.webservice.client.service.Place[] places) {
         this.places = places;
     }
 
-    public service.Place getPlaces(int i) {
+    public t1708e.webservice.client.service.Place getPlaces(int i) {
         return this.places[i];
     }
 
-    public void setPlaces(int i, service.Place _value) {
+    public void setPlaces(int i, t1708e.webservice.client.service.Place _value) {
         this.places[i] = _value;
     }
 
@@ -104,7 +104,7 @@ public class Category  implements java.io.Serializable {
      * 
      * @return status
      */
-    public String getStatus() {
+    public java.lang.String getStatus() {
         return status;
     }
 
@@ -114,12 +114,12 @@ public class Category  implements java.io.Serializable {
      * 
      * @param status
      */
-    public void setStatus(String status) {
+    public void setStatus(java.lang.String status) {
         this.status = status;
     }
 
-    private Object __equalsCalc = null;
-    public synchronized boolean equals(Object obj) {
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
         if (!(obj instanceof Category)) return false;
         Category other = (Category) obj;
         if (obj == null) return false;
@@ -159,7 +159,7 @@ public class Category  implements java.io.Serializable {
             for (int i=0;
                  i<java.lang.reflect.Array.getLength(getPlaces());
                  i++) {
-                Object obj = java.lang.reflect.Array.get(getPlaces(), i);
+                java.lang.Object obj = java.lang.reflect.Array.get(getPlaces(), i);
                 if (obj != null &&
                     !obj.getClass().isArray()) {
                     _hashCode += obj.hashCode();
@@ -220,8 +220,8 @@ public class Category  implements java.io.Serializable {
      * Get Custom Serializer
      */
     public static org.apache.axis.encoding.Serializer getSerializer(
-           String mechType,
-           Class _javaType,
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
            javax.xml.namespace.QName _xmlType) {
         return 
           new  org.apache.axis.encoding.ser.BeanSerializer(
@@ -232,8 +232,8 @@ public class Category  implements java.io.Serializable {
      * Get Custom Deserializer
      */
     public static org.apache.axis.encoding.Deserializer getDeserializer(
-           String mechType,
-           Class _javaType,
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
            javax.xml.namespace.QName _xmlType) {
         return 
           new  org.apache.axis.encoding.ser.BeanDeserializer(

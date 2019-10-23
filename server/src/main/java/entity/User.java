@@ -14,6 +14,7 @@ public class User {
     private String username;
     private String email;
     private String password;
+    private String salt;
     private String urlImage;
     private int role;
 
@@ -83,6 +84,14 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getSalt() {
+        return salt;
+    }
+
+    public void setSalt(String salt) {
+        this.salt = salt;
     }
 
     public String getUrlImage() {

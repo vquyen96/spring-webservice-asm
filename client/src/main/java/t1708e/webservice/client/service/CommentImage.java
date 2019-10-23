@@ -8,34 +8,34 @@
 package t1708e.webservice.client.service;
 
 public class CommentImage  implements java.io.Serializable {
-    private String content;
+    private java.lang.String content;
 
     private long createdAt;
 
     private int id;
 
-    private service.PlaceImage placeImage;
+    private t1708e.webservice.client.service.PlaceImage placeImage;
 
-    private String status;
+    private java.lang.String status;
 
-    private String title;
+    private java.lang.String title;
 
     private long updatedAt;
 
-    private service.User user;
+    private t1708e.webservice.client.service.User user;
 
     public CommentImage() {
     }
 
     public CommentImage(
-           String content,
+           java.lang.String content,
            long createdAt,
            int id,
-           service.PlaceImage placeImage,
-           String status,
-           String title,
+           t1708e.webservice.client.service.PlaceImage placeImage,
+           java.lang.String status,
+           java.lang.String title,
            long updatedAt,
-           service.User user) {
+           t1708e.webservice.client.service.User user) {
            this.content = content;
            this.createdAt = createdAt;
            this.id = id;
@@ -52,7 +52,7 @@ public class CommentImage  implements java.io.Serializable {
      * 
      * @return content
      */
-    public String getContent() {
+    public java.lang.String getContent() {
         return content;
     }
 
@@ -62,7 +62,7 @@ public class CommentImage  implements java.io.Serializable {
      * 
      * @param content
      */
-    public void setContent(String content) {
+    public void setContent(java.lang.String content) {
         this.content = content;
     }
 
@@ -112,7 +112,7 @@ public class CommentImage  implements java.io.Serializable {
      * 
      * @return placeImage
      */
-    public service.PlaceImage getPlaceImage() {
+    public t1708e.webservice.client.service.PlaceImage getPlaceImage() {
         return placeImage;
     }
 
@@ -122,7 +122,7 @@ public class CommentImage  implements java.io.Serializable {
      * 
      * @param placeImage
      */
-    public void setPlaceImage(service.PlaceImage placeImage) {
+    public void setPlaceImage(t1708e.webservice.client.service.PlaceImage placeImage) {
         this.placeImage = placeImage;
     }
 
@@ -132,7 +132,7 @@ public class CommentImage  implements java.io.Serializable {
      * 
      * @return status
      */
-    public String getStatus() {
+    public java.lang.String getStatus() {
         return status;
     }
 
@@ -142,7 +142,7 @@ public class CommentImage  implements java.io.Serializable {
      * 
      * @param status
      */
-    public void setStatus(String status) {
+    public void setStatus(java.lang.String status) {
         this.status = status;
     }
 
@@ -152,7 +152,7 @@ public class CommentImage  implements java.io.Serializable {
      * 
      * @return title
      */
-    public String getTitle() {
+    public java.lang.String getTitle() {
         return title;
     }
 
@@ -162,7 +162,7 @@ public class CommentImage  implements java.io.Serializable {
      * 
      * @param title
      */
-    public void setTitle(String title) {
+    public void setTitle(java.lang.String title) {
         this.title = title;
     }
 
@@ -192,7 +192,7 @@ public class CommentImage  implements java.io.Serializable {
      * 
      * @return user
      */
-    public service.User getUser() {
+    public t1708e.webservice.client.service.User getUser() {
         return user;
     }
 
@@ -202,12 +202,12 @@ public class CommentImage  implements java.io.Serializable {
      * 
      * @param user
      */
-    public void setUser(service.User user) {
+    public void setUser(t1708e.webservice.client.service.User user) {
         this.user = user;
     }
 
-    private Object __equalsCalc = null;
-    public synchronized boolean equals(Object obj) {
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
         if (!(obj instanceof CommentImage)) return false;
         CommentImage other = (CommentImage) obj;
         if (obj == null) return false;
@@ -341,8 +341,8 @@ public class CommentImage  implements java.io.Serializable {
      * Get Custom Serializer
      */
     public static org.apache.axis.encoding.Serializer getSerializer(
-           String mechType,
-           Class _javaType,
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
            javax.xml.namespace.QName _xmlType) {
         return 
           new  org.apache.axis.encoding.ser.BeanSerializer(
@@ -353,8 +353,8 @@ public class CommentImage  implements java.io.Serializable {
      * Get Custom Deserializer
      */
     public static org.apache.axis.encoding.Deserializer getDeserializer(
-           String mechType,
-           Class _javaType,
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
            javax.xml.namespace.QName _xmlType) {
         return 
           new  org.apache.axis.encoding.ser.BeanDeserializer(

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" th:href="@{../admin-style/vendor2/bootstrap/css/bootstrap.min.css}">
+    <link th:href="@{../admin-style/vendor2/fonts/circular-std/style.css}" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{../admin-style/libs/css/style.css}">
+    <link rel="stylesheet" th:href="@{../admin-style/vendor2/fonts/fontawesome/css/fontawesome-all.css}">
+    <link rel="stylesheet" th:href="@{../admin-style/vendor2/charts/chartist-bundle/chartist.css}">
+    <link rel="stylesheet" th:href="@{../admin-style/vendor2/charts/morris-bundle/morris.css}">
+    <link rel="stylesheet" th:href="@{../admin-style/vendor2/fonts/material-design-iconic-font/css/materialdesignicons.min.css}">
+    <link rel="stylesheet" th:href="@{../admin-style/vendor2/charts/c3charts/c3.css}">
+    <link rel="stylesheet" th:href="@{../admin-style/vendor2/fonts/flag-icon-css/flag-icon.min.css}">
+    <title>Concept - Bootstrap 4 Admin Dashboard Template</title>
+</head>
+<body>
+
+<div th:insert="include/header-admin :: header"></div>
+<div class="dashboard-wrapper">
+    <div class="container-fluid dashboard-content">
+        <div class="row">
+            <div class="col-xl-10">
+                <!-- ============================================================== -->
+                <!-- basic form  -->
+                <!-- ============================================================== -->
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="card">
+                                <h5 class="card-header">Create Category</h5>
+                                <div class="card-body">
+                                    <form>
+                                        <div class="form-group">
+                                            <label class="col-form-label">Name</label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-form-label">Summary</label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-form-label">Description</label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-form-label">Rating</label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <div>
+                                            <input type="submit" value="Submit">
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script th:src="@{../admin-style/vendor2/jquery/jquery-3.3.1.min.js}"></script>
+<!-- bootstap bundle js -->
+<script th:src="@{../admin-style/vendor2/bootstrap/js/bootstrap.bundle.js}"></script>
+<!-- slimscroll js -->
+<script th:src="@{../admin-style/vendor2/slimscroll/jquery.slimscroll.js}"></script>
+<!-- main js -->
+<script th:src="@{../admin-style/libs/js/main-js.js}"></script>
+<!-- chart chartist js -->
+<script th:src="@{../admin-style/vendor2/charts/chartist-bundle/chartist.min.js}"></script>
+<!-- sparkline js -->
+<script th:src="@{../admin-style/vendor2/charts/sparkline/jquery.sparkline.js}"></script>
+<!-- morris js -->
+<script th:src="@{../admin-style/vendor2/charts/morris-bundle/raphael.min.js}"></script>
+<script th:src="@{../admin-style/vendor2/charts/morris-bundle/morris.js}"></script>
+<!-- chart c3 js -->
+<script th:src="@{../admin-style/vendor2/charts/c3charts/c3.min.js}"></script>
+<script th:src="@{../admin-style/vendor2/charts/c3charts/d3-5.4.0.min.js}"></script>
+<script th:src="@{../admin-style/vendor2/charts/c3charts/C3chartjs.js}"></script>
+<script th:src="@{../admin-style/libs/js/dashboard-ecommerce.js}"></script>
+</body>
+</html>

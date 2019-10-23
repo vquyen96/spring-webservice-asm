@@ -1,8 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c66ff55c-fd07-478f-9305-e4d21e2232bf" name="Default Changelist" comment="">
+    <list default="true" id="4939b80a-0d63-4c25-b2e1-f055c0217043" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../client/lib/axis.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client/lib/commons-discovery-0.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client/lib/commons-logging-1.0.4.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client/lib/jaxrpc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client/lib/log4j-1.2.8.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client/lib/saaj.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client/lib/wsdl4j-1.5.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client/src/main/java/t1708e/webservice/client/service/SignUpServicePortBindingStub.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client/src/main/java/t1708e/webservice/client/service/SignUpServiceServiceLocator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/main/java/t1708e/webservice/client/config/ServiceConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/main/java/t1708e/webservice/client/config/ServiceConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/main/java/t1708e/webservice/client/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/main/java/t1708e/webservice/client/controller/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/main/java/t1708e/webservice/client/service/Category.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/main/java/t1708e/webservice/client/service/CategoryService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/main/java/t1708e/webservice/client/service/CommentImage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/main/java/t1708e/webservice/client/service/CommentPlace.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/main/java/t1708e/webservice/client/service/Place.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/main/java/t1708e/webservice/client/service/PlaceImage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/main/java/t1708e/webservice/client/service/RatePlace.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/main/java/t1708e/webservice/client/service/RatePlaceImage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/main/java/t1708e/webservice/client/service/SignInService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/main/java/t1708e/webservice/client/service/SignInServicePortBindingStub.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/main/java/t1708e/webservice/client/service/SignInServiceService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/main/java/t1708e/webservice/client/service/SignInServiceServiceLocator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/main/java/t1708e/webservice/client/service/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/main/java/t1708e/webservice/client/service/category.wsdl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/main/java/t1708e/webservice/client/service/register.wsdl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/main/resources/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/main/resources/templates/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/server.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/example/HelloWorld.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/example/HelloWorld.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/server.kotlin_module" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/META-INF/server.kotlin_module" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/service/SignInService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/service/SignInService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/service/SignUpService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/service/SignUpService.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -10,12 +46,8 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -24,37 +56,31 @@
     <option name="importingSettings">
       <MavenImportingSettings>
         <option name="importAutomatically" value="true" />
-        <option name="vmOptionsForImporter" value="-Xmx768m" />
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectId" id="1SPZ394NYLZX6JiHp1zaEeWhe87" />
+  <component name="ProjectId" id="1SYndW5aURnI0qfudzOxgOSTZDN" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../spring-security-combine" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
-    <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.importing" />
   </component>
-  <component name="RunAnythingCache">
-    <option name="myCommands">
-      <command value="mvn clean" />
-      <command value="mvn compile" />
-    </option>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="service" />
+      <recent name="example" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -107,16 +133,12 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="c66ff55c-fd07-478f-9305-e4d21e2232bf" name="Default Changelist" comment="" />
-      <created>1571466990446</created>
+      <changelist id="4939b80a-0d63-4c25-b2e1-f055c0217043" name="Default Changelist" comment="" />
+      <created>1571749484170</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1571466990446</updated>
-      <workItem from="1571466994999" duration="3409000" />
-      <workItem from="1571578018967" duration="3095000" />
-      <workItem from="1571581209915" duration="228000" />
-      <workItem from="1571585338448" duration="1081000" />
-      <workItem from="1571627405825" duration="2292000" />
+      <updated>1571749484170</updated>
+      <workItem from="1571749496206" duration="2452000" />
     </task>
     <servers />
   </component>
@@ -128,12 +150,13 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>

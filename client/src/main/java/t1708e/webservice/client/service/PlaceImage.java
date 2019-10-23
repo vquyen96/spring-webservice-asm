@@ -8,37 +8,37 @@
 package t1708e.webservice.client.service;
 
 public class PlaceImage  implements java.io.Serializable {
-    private service.CommentImage[] commentImages;
+    private t1708e.webservice.client.service.CommentImage[] commentImages;
 
     private long createdAt;
 
     private int id;
 
-    private service.Place place;
+    private t1708e.webservice.client.service.Place place;
 
-    private service.RatePlaceImage[] ratePlaceImages;
+    private t1708e.webservice.client.service.RatePlaceImage[] ratePlaceImages;
 
     private float rating;
 
-    private String status;
+    private java.lang.String status;
 
     private long updatedAt;
 
-    private String urlIma;
+    private java.lang.String urlIma;
 
     public PlaceImage() {
     }
 
     public PlaceImage(
-           service.CommentImage[] commentImages,
+           t1708e.webservice.client.service.CommentImage[] commentImages,
            long createdAt,
            int id,
-           service.Place place,
-           service.RatePlaceImage[] ratePlaceImages,
+           t1708e.webservice.client.service.Place place,
+           t1708e.webservice.client.service.RatePlaceImage[] ratePlaceImages,
            float rating,
-           String status,
+           java.lang.String status,
            long updatedAt,
-           String urlIma) {
+           java.lang.String urlIma) {
            this.commentImages = commentImages;
            this.createdAt = createdAt;
            this.id = id;
@@ -56,7 +56,7 @@ public class PlaceImage  implements java.io.Serializable {
      * 
      * @return commentImages
      */
-    public service.CommentImage[] getCommentImages() {
+    public t1708e.webservice.client.service.CommentImage[] getCommentImages() {
         return commentImages;
     }
 
@@ -66,15 +66,15 @@ public class PlaceImage  implements java.io.Serializable {
      * 
      * @param commentImages
      */
-    public void setCommentImages(service.CommentImage[] commentImages) {
+    public void setCommentImages(t1708e.webservice.client.service.CommentImage[] commentImages) {
         this.commentImages = commentImages;
     }
 
-    public service.CommentImage getCommentImages(int i) {
+    public t1708e.webservice.client.service.CommentImage getCommentImages(int i) {
         return this.commentImages[i];
     }
 
-    public void setCommentImages(int i, service.CommentImage _value) {
+    public void setCommentImages(int i, t1708e.webservice.client.service.CommentImage _value) {
         this.commentImages[i] = _value;
     }
 
@@ -124,7 +124,7 @@ public class PlaceImage  implements java.io.Serializable {
      * 
      * @return place
      */
-    public service.Place getPlace() {
+    public t1708e.webservice.client.service.Place getPlace() {
         return place;
     }
 
@@ -134,7 +134,7 @@ public class PlaceImage  implements java.io.Serializable {
      * 
      * @param place
      */
-    public void setPlace(service.Place place) {
+    public void setPlace(t1708e.webservice.client.service.Place place) {
         this.place = place;
     }
 
@@ -144,7 +144,7 @@ public class PlaceImage  implements java.io.Serializable {
      * 
      * @return ratePlaceImages
      */
-    public service.RatePlaceImage[] getRatePlaceImages() {
+    public t1708e.webservice.client.service.RatePlaceImage[] getRatePlaceImages() {
         return ratePlaceImages;
     }
 
@@ -154,15 +154,15 @@ public class PlaceImage  implements java.io.Serializable {
      * 
      * @param ratePlaceImages
      */
-    public void setRatePlaceImages(service.RatePlaceImage[] ratePlaceImages) {
+    public void setRatePlaceImages(t1708e.webservice.client.service.RatePlaceImage[] ratePlaceImages) {
         this.ratePlaceImages = ratePlaceImages;
     }
 
-    public service.RatePlaceImage getRatePlaceImages(int i) {
+    public t1708e.webservice.client.service.RatePlaceImage getRatePlaceImages(int i) {
         return this.ratePlaceImages[i];
     }
 
-    public void setRatePlaceImages(int i, service.RatePlaceImage _value) {
+    public void setRatePlaceImages(int i, t1708e.webservice.client.service.RatePlaceImage _value) {
         this.ratePlaceImages[i] = _value;
     }
 
@@ -192,7 +192,7 @@ public class PlaceImage  implements java.io.Serializable {
      * 
      * @return status
      */
-    public String getStatus() {
+    public java.lang.String getStatus() {
         return status;
     }
 
@@ -202,7 +202,7 @@ public class PlaceImage  implements java.io.Serializable {
      * 
      * @param status
      */
-    public void setStatus(String status) {
+    public void setStatus(java.lang.String status) {
         this.status = status;
     }
 
@@ -232,7 +232,7 @@ public class PlaceImage  implements java.io.Serializable {
      * 
      * @return urlIma
      */
-    public String getUrlIma() {
+    public java.lang.String getUrlIma() {
         return urlIma;
     }
 
@@ -242,12 +242,12 @@ public class PlaceImage  implements java.io.Serializable {
      * 
      * @param urlIma
      */
-    public void setUrlIma(String urlIma) {
+    public void setUrlIma(java.lang.String urlIma) {
         this.urlIma = urlIma;
     }
 
-    private Object __equalsCalc = null;
-    public synchronized boolean equals(Object obj) {
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
         if (!(obj instanceof PlaceImage)) return false;
         PlaceImage other = (PlaceImage) obj;
         if (obj == null) return false;
@@ -292,7 +292,7 @@ public class PlaceImage  implements java.io.Serializable {
             for (int i=0;
                  i<java.lang.reflect.Array.getLength(getCommentImages());
                  i++) {
-                Object obj = java.lang.reflect.Array.get(getCommentImages(), i);
+                java.lang.Object obj = java.lang.reflect.Array.get(getCommentImages(), i);
                 if (obj != null &&
                     !obj.getClass().isArray()) {
                     _hashCode += obj.hashCode();
@@ -308,7 +308,7 @@ public class PlaceImage  implements java.io.Serializable {
             for (int i=0;
                  i<java.lang.reflect.Array.getLength(getRatePlaceImages());
                  i++) {
-                Object obj = java.lang.reflect.Array.get(getRatePlaceImages(), i);
+                java.lang.Object obj = java.lang.reflect.Array.get(getRatePlaceImages(), i);
                 if (obj != null &&
                     !obj.getClass().isArray()) {
                     _hashCode += obj.hashCode();
@@ -407,8 +407,8 @@ public class PlaceImage  implements java.io.Serializable {
      * Get Custom Serializer
      */
     public static org.apache.axis.encoding.Serializer getSerializer(
-           String mechType,
-           Class _javaType,
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
            javax.xml.namespace.QName _xmlType) {
         return 
           new  org.apache.axis.encoding.ser.BeanSerializer(
@@ -419,8 +419,8 @@ public class PlaceImage  implements java.io.Serializable {
      * Get Custom Deserializer
      */
     public static org.apache.axis.encoding.Deserializer getDeserializer(
-           String mechType,
-           Class _javaType,
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
            javax.xml.namespace.QName _xmlType) {
         return 
           new  org.apache.axis.encoding.ser.BeanDeserializer(

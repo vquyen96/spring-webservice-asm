@@ -8,52 +8,55 @@
 package t1708e.webservice.client.service;
 
 public class User  implements java.io.Serializable {
-    private service.CommentImage[] commentImages;
+    private t1708e.webservice.client.service.CommentImage[] commentImages;
 
-    private service.CommentPlace[] commentPlaces;
+    private t1708e.webservice.client.service.CommentPlace[] commentPlaces;
 
     private long createdAt;
 
-    private String email;
+    private java.lang.String email;
 
     private int id;
 
-    private String password;
+    private java.lang.String password;
 
-    private service.Place[] places;
+    private t1708e.webservice.client.service.Place[] places;
 
-    private service.RatePlaceImage[] ratePlaceImages;
+    private t1708e.webservice.client.service.RatePlaceImage[] ratePlaceImages;
 
-    private service.RatePlace[] ratePlaces;
+    private t1708e.webservice.client.service.RatePlace[] ratePlaces;
 
     private int role;
 
-    private String status;
+    private java.lang.String salt;
+
+    private java.lang.String status;
 
     private long updatedAt;
 
-    private String urlImage;
+    private java.lang.String urlImage;
 
-    private String username;
+    private java.lang.String username;
 
     public User() {
     }
 
     public User(
-           service.CommentImage[] commentImages,
-           service.CommentPlace[] commentPlaces,
+           t1708e.webservice.client.service.CommentImage[] commentImages,
+           t1708e.webservice.client.service.CommentPlace[] commentPlaces,
            long createdAt,
-           String email,
+           java.lang.String email,
            int id,
-           String password,
-           service.Place[] places,
-           service.RatePlaceImage[] ratePlaceImages,
-           service.RatePlace[] ratePlaces,
+           java.lang.String password,
+           t1708e.webservice.client.service.Place[] places,
+           t1708e.webservice.client.service.RatePlaceImage[] ratePlaceImages,
+           t1708e.webservice.client.service.RatePlace[] ratePlaces,
            int role,
-           String status,
+           java.lang.String salt,
+           java.lang.String status,
            long updatedAt,
-           String urlImage,
-           String username) {
+           java.lang.String urlImage,
+           java.lang.String username) {
            this.commentImages = commentImages;
            this.commentPlaces = commentPlaces;
            this.createdAt = createdAt;
@@ -64,6 +67,7 @@ public class User  implements java.io.Serializable {
            this.ratePlaceImages = ratePlaceImages;
            this.ratePlaces = ratePlaces;
            this.role = role;
+           this.salt = salt;
            this.status = status;
            this.updatedAt = updatedAt;
            this.urlImage = urlImage;
@@ -76,7 +80,7 @@ public class User  implements java.io.Serializable {
      * 
      * @return commentImages
      */
-    public service.CommentImage[] getCommentImages() {
+    public t1708e.webservice.client.service.CommentImage[] getCommentImages() {
         return commentImages;
     }
 
@@ -86,15 +90,15 @@ public class User  implements java.io.Serializable {
      * 
      * @param commentImages
      */
-    public void setCommentImages(service.CommentImage[] commentImages) {
+    public void setCommentImages(t1708e.webservice.client.service.CommentImage[] commentImages) {
         this.commentImages = commentImages;
     }
 
-    public service.CommentImage getCommentImages(int i) {
+    public t1708e.webservice.client.service.CommentImage getCommentImages(int i) {
         return this.commentImages[i];
     }
 
-    public void setCommentImages(int i, service.CommentImage _value) {
+    public void setCommentImages(int i, t1708e.webservice.client.service.CommentImage _value) {
         this.commentImages[i] = _value;
     }
 
@@ -104,7 +108,7 @@ public class User  implements java.io.Serializable {
      * 
      * @return commentPlaces
      */
-    public service.CommentPlace[] getCommentPlaces() {
+    public t1708e.webservice.client.service.CommentPlace[] getCommentPlaces() {
         return commentPlaces;
     }
 
@@ -114,15 +118,15 @@ public class User  implements java.io.Serializable {
      * 
      * @param commentPlaces
      */
-    public void setCommentPlaces(service.CommentPlace[] commentPlaces) {
+    public void setCommentPlaces(t1708e.webservice.client.service.CommentPlace[] commentPlaces) {
         this.commentPlaces = commentPlaces;
     }
 
-    public service.CommentPlace getCommentPlaces(int i) {
+    public t1708e.webservice.client.service.CommentPlace getCommentPlaces(int i) {
         return this.commentPlaces[i];
     }
 
-    public void setCommentPlaces(int i, service.CommentPlace _value) {
+    public void setCommentPlaces(int i, t1708e.webservice.client.service.CommentPlace _value) {
         this.commentPlaces[i] = _value;
     }
 
@@ -152,7 +156,7 @@ public class User  implements java.io.Serializable {
      * 
      * @return email
      */
-    public String getEmail() {
+    public java.lang.String getEmail() {
         return email;
     }
 
@@ -162,7 +166,7 @@ public class User  implements java.io.Serializable {
      * 
      * @param email
      */
-    public void setEmail(String email) {
+    public void setEmail(java.lang.String email) {
         this.email = email;
     }
 
@@ -192,7 +196,7 @@ public class User  implements java.io.Serializable {
      * 
      * @return password
      */
-    public String getPassword() {
+    public java.lang.String getPassword() {
         return password;
     }
 
@@ -202,7 +206,7 @@ public class User  implements java.io.Serializable {
      * 
      * @param password
      */
-    public void setPassword(String password) {
+    public void setPassword(java.lang.String password) {
         this.password = password;
     }
 
@@ -212,7 +216,7 @@ public class User  implements java.io.Serializable {
      * 
      * @return places
      */
-    public service.Place[] getPlaces() {
+    public t1708e.webservice.client.service.Place[] getPlaces() {
         return places;
     }
 
@@ -222,15 +226,15 @@ public class User  implements java.io.Serializable {
      * 
      * @param places
      */
-    public void setPlaces(service.Place[] places) {
+    public void setPlaces(t1708e.webservice.client.service.Place[] places) {
         this.places = places;
     }
 
-    public service.Place getPlaces(int i) {
+    public t1708e.webservice.client.service.Place getPlaces(int i) {
         return this.places[i];
     }
 
-    public void setPlaces(int i, service.Place _value) {
+    public void setPlaces(int i, t1708e.webservice.client.service.Place _value) {
         this.places[i] = _value;
     }
 
@@ -240,7 +244,7 @@ public class User  implements java.io.Serializable {
      * 
      * @return ratePlaceImages
      */
-    public service.RatePlaceImage[] getRatePlaceImages() {
+    public t1708e.webservice.client.service.RatePlaceImage[] getRatePlaceImages() {
         return ratePlaceImages;
     }
 
@@ -250,15 +254,15 @@ public class User  implements java.io.Serializable {
      * 
      * @param ratePlaceImages
      */
-    public void setRatePlaceImages(service.RatePlaceImage[] ratePlaceImages) {
+    public void setRatePlaceImages(t1708e.webservice.client.service.RatePlaceImage[] ratePlaceImages) {
         this.ratePlaceImages = ratePlaceImages;
     }
 
-    public service.RatePlaceImage getRatePlaceImages(int i) {
+    public t1708e.webservice.client.service.RatePlaceImage getRatePlaceImages(int i) {
         return this.ratePlaceImages[i];
     }
 
-    public void setRatePlaceImages(int i, service.RatePlaceImage _value) {
+    public void setRatePlaceImages(int i, t1708e.webservice.client.service.RatePlaceImage _value) {
         this.ratePlaceImages[i] = _value;
     }
 
@@ -268,7 +272,7 @@ public class User  implements java.io.Serializable {
      * 
      * @return ratePlaces
      */
-    public service.RatePlace[] getRatePlaces() {
+    public t1708e.webservice.client.service.RatePlace[] getRatePlaces() {
         return ratePlaces;
     }
 
@@ -278,15 +282,15 @@ public class User  implements java.io.Serializable {
      * 
      * @param ratePlaces
      */
-    public void setRatePlaces(service.RatePlace[] ratePlaces) {
+    public void setRatePlaces(t1708e.webservice.client.service.RatePlace[] ratePlaces) {
         this.ratePlaces = ratePlaces;
     }
 
-    public service.RatePlace getRatePlaces(int i) {
+    public t1708e.webservice.client.service.RatePlace getRatePlaces(int i) {
         return this.ratePlaces[i];
     }
 
-    public void setRatePlaces(int i, service.RatePlace _value) {
+    public void setRatePlaces(int i, t1708e.webservice.client.service.RatePlace _value) {
         this.ratePlaces[i] = _value;
     }
 
@@ -312,11 +316,31 @@ public class User  implements java.io.Serializable {
 
 
     /**
+     * Gets the salt value for this User.
+     * 
+     * @return salt
+     */
+    public java.lang.String getSalt() {
+        return salt;
+    }
+
+
+    /**
+     * Sets the salt value for this User.
+     * 
+     * @param salt
+     */
+    public void setSalt(java.lang.String salt) {
+        this.salt = salt;
+    }
+
+
+    /**
      * Gets the status value for this User.
      * 
      * @return status
      */
-    public String getStatus() {
+    public java.lang.String getStatus() {
         return status;
     }
 
@@ -326,7 +350,7 @@ public class User  implements java.io.Serializable {
      * 
      * @param status
      */
-    public void setStatus(String status) {
+    public void setStatus(java.lang.String status) {
         this.status = status;
     }
 
@@ -356,7 +380,7 @@ public class User  implements java.io.Serializable {
      * 
      * @return urlImage
      */
-    public String getUrlImage() {
+    public java.lang.String getUrlImage() {
         return urlImage;
     }
 
@@ -366,7 +390,7 @@ public class User  implements java.io.Serializable {
      * 
      * @param urlImage
      */
-    public void setUrlImage(String urlImage) {
+    public void setUrlImage(java.lang.String urlImage) {
         this.urlImage = urlImage;
     }
 
@@ -376,7 +400,7 @@ public class User  implements java.io.Serializable {
      * 
      * @return username
      */
-    public String getUsername() {
+    public java.lang.String getUsername() {
         return username;
     }
 
@@ -386,12 +410,12 @@ public class User  implements java.io.Serializable {
      * 
      * @param username
      */
-    public void setUsername(String username) {
+    public void setUsername(java.lang.String username) {
         this.username = username;
     }
 
-    private Object __equalsCalc = null;
-    public synchronized boolean equals(Object obj) {
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
         if (!(obj instanceof User)) return false;
         User other = (User) obj;
         if (obj == null) return false;
@@ -426,6 +450,9 @@ public class User  implements java.io.Serializable {
              (this.ratePlaces!=null &&
               java.util.Arrays.equals(this.ratePlaces, other.getRatePlaces()))) &&
             this.role == other.getRole() &&
+            ((this.salt==null && other.getSalt()==null) || 
+             (this.salt!=null &&
+              this.salt.equals(other.getSalt()))) &&
             ((this.status==null && other.getStatus()==null) || 
              (this.status!=null &&
               this.status.equals(other.getStatus()))) &&
@@ -451,7 +478,7 @@ public class User  implements java.io.Serializable {
             for (int i=0;
                  i<java.lang.reflect.Array.getLength(getCommentImages());
                  i++) {
-                Object obj = java.lang.reflect.Array.get(getCommentImages(), i);
+                java.lang.Object obj = java.lang.reflect.Array.get(getCommentImages(), i);
                 if (obj != null &&
                     !obj.getClass().isArray()) {
                     _hashCode += obj.hashCode();
@@ -462,7 +489,7 @@ public class User  implements java.io.Serializable {
             for (int i=0;
                  i<java.lang.reflect.Array.getLength(getCommentPlaces());
                  i++) {
-                Object obj = java.lang.reflect.Array.get(getCommentPlaces(), i);
+                java.lang.Object obj = java.lang.reflect.Array.get(getCommentPlaces(), i);
                 if (obj != null &&
                     !obj.getClass().isArray()) {
                     _hashCode += obj.hashCode();
@@ -481,7 +508,7 @@ public class User  implements java.io.Serializable {
             for (int i=0;
                  i<java.lang.reflect.Array.getLength(getPlaces());
                  i++) {
-                Object obj = java.lang.reflect.Array.get(getPlaces(), i);
+                java.lang.Object obj = java.lang.reflect.Array.get(getPlaces(), i);
                 if (obj != null &&
                     !obj.getClass().isArray()) {
                     _hashCode += obj.hashCode();
@@ -492,7 +519,7 @@ public class User  implements java.io.Serializable {
             for (int i=0;
                  i<java.lang.reflect.Array.getLength(getRatePlaceImages());
                  i++) {
-                Object obj = java.lang.reflect.Array.get(getRatePlaceImages(), i);
+                java.lang.Object obj = java.lang.reflect.Array.get(getRatePlaceImages(), i);
                 if (obj != null &&
                     !obj.getClass().isArray()) {
                     _hashCode += obj.hashCode();
@@ -503,7 +530,7 @@ public class User  implements java.io.Serializable {
             for (int i=0;
                  i<java.lang.reflect.Array.getLength(getRatePlaces());
                  i++) {
-                Object obj = java.lang.reflect.Array.get(getRatePlaces(), i);
+                java.lang.Object obj = java.lang.reflect.Array.get(getRatePlaces(), i);
                 if (obj != null &&
                     !obj.getClass().isArray()) {
                     _hashCode += obj.hashCode();
@@ -511,6 +538,9 @@ public class User  implements java.io.Serializable {
             }
         }
         _hashCode += getRole();
+        if (getSalt() != null) {
+            _hashCode += getSalt().hashCode();
+        }
         if (getStatus() != null) {
             _hashCode += getStatus().hashCode();
         }
@@ -604,6 +634,13 @@ public class User  implements java.io.Serializable {
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("salt");
+        elemField.setXmlName(new javax.xml.namespace.QName("", "salt"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("status");
         elemField.setXmlName(new javax.xml.namespace.QName("", "status"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
@@ -643,8 +680,8 @@ public class User  implements java.io.Serializable {
      * Get Custom Serializer
      */
     public static org.apache.axis.encoding.Serializer getSerializer(
-           String mechType,
-           Class _javaType,
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
            javax.xml.namespace.QName _xmlType) {
         return 
           new  org.apache.axis.encoding.ser.BeanSerializer(
@@ -655,8 +692,8 @@ public class User  implements java.io.Serializable {
      * Get Custom Deserializer
      */
     public static org.apache.axis.encoding.Deserializer getDeserializer(
-           String mechType,
-           Class _javaType,
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
            javax.xml.namespace.QName _xmlType) {
         return 
           new  org.apache.axis.encoding.ser.BeanDeserializer(

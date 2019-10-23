@@ -17,6 +17,7 @@ import java.net.InetSocketAddress;
 public class HelloWorld {
 
   private SignUpService signUpService;
+  private SignInService signInService;
 
   @WebMethod
   public String sayHelloWorldFrom(String from) {
@@ -25,9 +26,13 @@ public class HelloWorld {
     return result;
   }
 
+  @WebMethod
   public void register(User user) {
     signUpService.create(user);
   }
+
+  @WebMethod
+  public void login(String username, String password) { signInService.login(username, password); }
 
   public static void main(String[] argv) throws IOException {
     HttpServer httpServer = HttpServer.create(new InetSocketAddress(InetAddress.getByName("0.0.0.0"), 9000), 16);
@@ -38,7 +43,7 @@ public class HelloWorld {
     Endpoint signinEndpoint = Endpoint.create(new SignInService());
     signinEndpoint.publish(httpServer.createContext("/login"));
 
-    Endpoint signupEndpoint = Endpoint.create(new SignInService());
+    Endpoint signupEndpoint = Endpoint.create(new SignUpService());
     signupEndpoint.publish(httpServer.createContext("/register"));
 
     Endpoint categoryEndpoint = Endpoint.create(new CategoryService());
@@ -51,6 +56,6 @@ public class HelloWorld {
     ratePlaceService.publish(httpServer.createContext("/rate/place"));
 
     httpServer.start();
-    System.out.println("Ờ!");
+    System.out.println("Service started!");
   }
 }

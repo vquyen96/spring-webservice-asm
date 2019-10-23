@@ -1,13 +1,21 @@
 package t1708e.webservice.client.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import t1708e.webservice.client.service.SignUpService;
+import t1708e.webservice.client.service.User;
+
+import java.rmi.RemoteException;
 
 @Controller
 @RequestMapping(value = {"/", "/home"})
 public class HomeController {
+    @Autowired
+    SignUpService signUpService;
+
     @RequestMapping(value = {"/", "/home"}, method = RequestMethod.GET)
     public String index(Model model) {
         return "index";
@@ -50,6 +58,14 @@ public class HomeController {
 
     @RequestMapping(value = "/register", method = RequestMethod.GET)
     public String register(Model model) {
+        model.addAttribute("user", new User());
         return "register";
+    }
+
+    @RequestMapping(value = "/register", method = RequestMethod.POST)
+    public String createStudent(Model model, User user) throws RemoteException {
+        model.addAttribute("user", user);
+        signUpService.create(user);
+        return "redirect:/login";
     }
 }

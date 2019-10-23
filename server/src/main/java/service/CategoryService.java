@@ -1,17 +1,17 @@
 package service;
 
 import entity.Category;
-import entity.User;
+import util.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import util.HibernateUtil;
-
 import javax.jws.WebMethod;
 import javax.jws.WebService;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import static com.sun.xml.internal.ws.spi.db.BindingContextFactory.LOGGER;
 
 @WebService
 public class CategoryService {
@@ -38,7 +38,7 @@ public class CategoryService {
         try (Session session = HibernateUtil.getSession()) {
             categories = session.createQuery("from Category", Category.class).list();
         } catch (Exception e) {
-
+            LOGGER.log(Level.SEVERE, String.format("Can not findAll category, stack trace"), e);
         }
         return categories;
     }
@@ -55,7 +55,7 @@ public class CategoryService {
             if (transaction != null) {
                 transaction.rollback();
             }
-
+            LOGGER.log(Level.SEVERE, String.format("Can not findById %s category, stack trace", id), e);
             return null;
         }
     }
@@ -68,14 +68,14 @@ public class CategoryService {
             Category category = session.get(Category.class, id);
             if (category != null) {
                 session.delete(category);
-
+                LOGGER.log(Level.INFO, String.format("Delete category success with id %s", id));
             }
             transaction.commit();
         } catch (Exception e) {
             if (transaction != null) {
                 transaction.rollback();
             }
-            
+            LOGGER.log(Level.SEVERE, String.format("Can not delete category with id %s, stack trace", id), e);
         }
     }
 }
