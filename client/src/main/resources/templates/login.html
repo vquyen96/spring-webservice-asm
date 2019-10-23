@@ -34,7 +34,8 @@
 <div class="limiter">
 	<div class="container-login100">
 		<div class="wrap-login100">
-			<form class="login100-form validate-form">
+			<form th:action="@{/home/login}" method="post" class="login100-form validate-form">
+				<div>
 					<span class="login100-form-title p-b-26">
 						Welcome
 					</span>
@@ -66,9 +67,10 @@
 							Don’t have an account?
 						</span>
 
-					<a class="txt2" href="#">
+					<a class="txt2" th:href="@{register}">
 						Sign Up
 					</a>
+				</div>
 				</div>
 			</form>
 		</div>

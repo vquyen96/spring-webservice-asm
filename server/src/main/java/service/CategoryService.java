@@ -18,10 +18,11 @@ public class CategoryService {
 
     @WebMethod
     public void save(Category category) {
+        System.out.println(category.getName());
         Transaction transaction = null;
         try (Session session = HibernateUtil.getSession()) {
             transaction = session.beginTransaction();
-            session.saveOrUpdate(category);
+            session.save(category);
             transaction.commit();
 
         } catch (Exception e) {

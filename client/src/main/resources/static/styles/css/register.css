@@ -2,6 +2,19 @@ body{
     background-image: url("../../images/wp2003957.jpg");
     background-size: 100%;
 }
+.txt1 {
+    font-family: Poppins-Regular;
+    font-size: 13px;
+    color: #666666;
+    line-height: 1.5;
+}
+
+.txt2 {
+    font-family: Poppins-Regular;
+    font-size: 13px;
+    color: #333333;
+    line-height: 1.5;
+}
 
 /* @extend display-flex; */
 display-flex {

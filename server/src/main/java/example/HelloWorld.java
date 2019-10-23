@@ -1,10 +1,9 @@
 package example;
 import com.sun.net.httpserver.HttpServer;
+import entity.Category;
+import entity.Place;
 import entity.User;
-import service.CategoryService;
-import service.PlaceService;
-import service.SignInService;
-import service.SignUpService;
+import service.*;
 
 import javax.jws.WebMethod;
 import javax.jws.WebService;
@@ -12,12 +11,15 @@ import javax.xml.ws.Endpoint;
 import java.io.IOException;
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
+import java.util.List;
 
 @WebService()
 public class HelloWorld {
 
   private SignUpService signUpService;
   private SignInService signInService;
+  private CategoryService categoryService;
+  private PlaceService placeService;
 
   @WebMethod
   public String sayHelloWorldFrom(String from) {
@@ -32,7 +34,24 @@ public class HelloWorld {
   }
 
   @WebMethod
-  public void login(String username, String password) { signInService.login(username, password); }
+  public void login(String username, String password) {
+    signInService.login(username, password);
+  }
+
+  @WebMethod
+  public void createCategory(Category category) {
+    categoryService.save(category);
+  }
+
+  @WebMethod
+  public List<Category> categories(){
+    return categoryService.findAll();
+  }
+
+  @WebMethod
+  public void createPlace(Place place) {
+    placeService.save(place);
+  }
 
   public static void main(String[] argv) throws IOException {
     HttpServer httpServer = HttpServer.create(new InetSocketAddress(InetAddress.getByName("0.0.0.0"), 9000), 16);
@@ -52,10 +71,11 @@ public class HelloWorld {
     Endpoint placeService = Endpoint.create(new PlaceService());
     placeService.publish(httpServer.createContext("/place"));
 
-    Endpoint ratePlaceService = Endpoint.create(new PlaceService());
+    Endpoint ratePlaceService = Endpoint.create(new RatePlaceService());
     ratePlaceService.publish(httpServer.createContext("/rate/place"));
 
     httpServer.start();
     System.out.println("Service started!");
   }
 }
+
