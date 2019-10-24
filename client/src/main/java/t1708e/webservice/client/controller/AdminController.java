@@ -28,6 +28,13 @@ public class AdminController {
     }
 
     @RequestMapping(value = "/category", method = RequestMethod.GET)
+    public String getCategories(Model model) throws RemoteException {
+        model.addAttribute("category", new Category());
+        model.addAttribute("categories", categoryService.findAll());
+        return "admin/category-list";
+    }
+
+    @RequestMapping(value = "/category-create", method = RequestMethod.GET)
     public String getCategoryForm(Model model) {
         model.addAttribute("category", new Category());
         return "admin/category-form";
