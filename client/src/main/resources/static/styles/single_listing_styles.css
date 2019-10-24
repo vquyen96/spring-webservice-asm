@@ -52,6 +52,19 @@
 		 url('../fonts/beyond_the_mountains.ttf')  format('opentype');
 }
 
+
+
+.modal-image-main {
+	max-width: 100%;
+	max-height: 60vh;
+	background: #ccc;
+	text-align: center;
+}
+
+.modal-image-main img {
+	max-width: 100%;
+	max-height: 60vh;
+}
 /*********************************
 2. Body and some general stuff
 *********************************/

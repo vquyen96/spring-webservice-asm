@@ -19,6 +19,14 @@
 
 $(document).ready(function()
 {
+
+	$(document).on('click', '.show-modal-image', function () {
+		var src = $(this).attr('src');
+		// var srcArr = src.split("_thumb");
+		// src = srcArr.join("");
+		$('#modal-image .modal-image-main img').attr('src', src);
+		$('#modal-image').modal();
+	});
 	"use strict";
 
 	/* 
