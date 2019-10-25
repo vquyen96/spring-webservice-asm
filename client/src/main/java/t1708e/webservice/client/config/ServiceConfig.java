@@ -10,6 +10,13 @@ import javax.xml.rpc.ServiceException;
 public class ServiceConfig {
 
     @Bean
+    SignInService signInService() throws ServiceException {
+        SignInServiceServiceLocator locator = new SignInServiceServiceLocator();
+        SignInService signInService = locator.getSignInServicePort();
+        return signInService;
+    }
+
+    @Bean
     SignUpService signUpService() throws ServiceException {
         SignUpServiceServiceLocator  locator = new SignUpServiceServiceLocator();
         SignUpService signUpService = locator.getSignUpServicePort();

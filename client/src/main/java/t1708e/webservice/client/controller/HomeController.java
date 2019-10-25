@@ -3,23 +3,23 @@ package t1708e.webservice.client.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import t1708e.webservice.client.service.*;
 
 import java.rmi.RemoteException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 @Controller
-@RequestMapping(value = {"/", "/home"})
+@RequestMapping(value = {"/home", "/"})
 public class HomeController {
-    @Autowired
-    SignUpService signUpService;
 
-    @Autowired
-    CategoryService categoryService;
+    @Autowired(required = false)
+    private SignUpService signUpService;
+
+    @Autowired(required = false)
+    private CategoryService categoryService;
+
+    @Autowired(required = false)
+    private SignInService signInService;
 
     @RequestMapping(value = {"/", "/home"}, method = RequestMethod.GET)
     public String index(Model model) throws RemoteException {
@@ -61,13 +61,16 @@ public class HomeController {
         return "login";
     }
 
-//    @RequestMapping(value = "/login", method = RequestMethod.GET)
-//    public String login(Model model, String username, String password) throws RemoteException {
-//        model.addAttribute("username", username);
-//        model.addAttribute("password", password);
-//        signInService.login(username, password);
-//        return "login";
-//    }
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    public String login(Model model,
+                        @RequestParam(value = "username", required = true) String username,
+                        @RequestParam(value = "password", required = true) String password)
+            throws RemoteException {
+        model.addAttribute("username", username);
+        model.addAttribute("password", password);
+        signInService.login(username, password);
+        return "redirect:/";
+    }
 
     @RequestMapping(value = "/register", method = RequestMethod.GET)
     public String register(Model model) {
