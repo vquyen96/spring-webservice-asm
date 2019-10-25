@@ -17,6 +17,10 @@ public class SignUpService {
         Transaction transaction = null;
         try (Session session = HibernateUtil.getSession()) {
             transaction = session.beginTransaction();
+            user.setEmail(user.getEmail().toLowerCase().trim());
+            user.setUsername(user.getUsername().toLowerCase().trim());
+            user.setSalt(PasswordUtil.getSalt(30));
+            user.setPassword(PasswordUtil.generateSecurePassword(user.getPassword(), user.getSalt()));
             session.save(user);
             transaction.commit();
         } catch (Exception e) {

@@ -1,4 +1,5 @@
 package example;
+
 import com.sun.net.httpserver.HttpServer;
 import entity.Category;
 import entity.Place;
@@ -16,66 +17,66 @@ import java.util.List;
 @WebService()
 public class HelloWorld {
 
-  private SignUpService signUpService;
-  private SignInService signInService;
-  private CategoryService categoryService;
-  private PlaceService placeService;
+    private SignUpService signUpService;
+    private SignInService signInService;
+    private CategoryService categoryService;
+    private PlaceService placeService;
 
-  @WebMethod
-  public String sayHelloWorldFrom(String from) {
-    String result = "Hello, world, from " + from;
-    System.out.println(result);
-    return result;
-  }
+    public static void main(String[] argv) throws IOException {
+        HttpServer httpServer = HttpServer.create(new InetSocketAddress(InetAddress.getByName("0.0.0.0"), 9000), 16);
 
-  @WebMethod
-  public void register(User user) {
-    signUpService.create(user);
-  }
+        Endpoint fooEndpoint = Endpoint.create(new HelloWorld());
+        fooEndpoint.publish(httpServer.createContext("/hello"));
 
-  @WebMethod
-  public void login(String username, String password) {
-    signInService.login(username, password);
-  }
+        Endpoint signinEndpoint = Endpoint.create(new SignInService());
+        signinEndpoint.publish(httpServer.createContext("/login"));
 
-  @WebMethod
-  public void createCategory(Category category) {
-    categoryService.save(category);
-  }
+        Endpoint signupEndpoint = Endpoint.create(new SignUpService());
+        signupEndpoint.publish(httpServer.createContext("/register"));
 
-  @WebMethod
-  public List<Category> categories(){
-    return categoryService.findAll();
-  }
+        Endpoint categoryEndpoint = Endpoint.create(new CategoryService());
+        categoryEndpoint.publish(httpServer.createContext("/category"));
 
-  @WebMethod
-  public void createPlace(Place place) {
-    placeService.save(place);
-  }
+        Endpoint placeService = Endpoint.create(new PlaceService());
+        placeService.publish(httpServer.createContext("/place"));
 
-  public static void main(String[] argv) throws IOException {
-    HttpServer httpServer = HttpServer.create(new InetSocketAddress(InetAddress.getByName("0.0.0.0"), 9000), 16);
+        Endpoint ratePlaceService = Endpoint.create(new RatePlaceService());
+        ratePlaceService.publish(httpServer.createContext("/rate/place"));
 
-    Endpoint fooEndpoint = Endpoint.create(new HelloWorld());
-    fooEndpoint.publish(httpServer.createContext("/hello"));
+        httpServer.start();
+        System.out.println("Service started!");
+    }
 
-    Endpoint signinEndpoint = Endpoint.create(new SignInService());
-    signinEndpoint.publish(httpServer.createContext("/login"));
+    @WebMethod
+    public String sayHelloWorldFrom(String from) {
+        String result = "Hello, world, from " + from;
+        System.out.println(result);
+        return result;
+    }
 
-    Endpoint signupEndpoint = Endpoint.create(new SignUpService());
-    signupEndpoint.publish(httpServer.createContext("/register"));
+    @WebMethod
+    public void register(User user) {
+        signUpService.create(user);
+    }
 
-    Endpoint categoryEndpoint = Endpoint.create(new CategoryService());
-    categoryEndpoint.publish(httpServer.createContext("/category"));
+    @WebMethod
+    public void login(String username, String password) {
+        signInService.login(username, password);
+    }
 
-    Endpoint placeService = Endpoint.create(new PlaceService());
-    placeService.publish(httpServer.createContext("/place"));
+    @WebMethod
+    public void createCategory(Category category) {
+        categoryService.save(category);
+    }
 
-    Endpoint ratePlaceService = Endpoint.create(new RatePlaceService());
-    ratePlaceService.publish(httpServer.createContext("/rate/place"));
+    @WebMethod
+    public List<Category> categories() {
+        return categoryService.findAll();
+    }
 
-    httpServer.start();
-    System.out.println("Service started!");
-  }
+    @WebMethod
+    public void createPlace(Place place) {
+        placeService.save(place);
+    }
 }
 

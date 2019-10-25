@@ -8,6 +8,6 @@
 package t1708e.webservice.client.service;
 
 public interface SignInService extends java.rmi.Remote {
-    public java.lang.String login(java.lang.String arg0, java.lang.String arg1) throws java.rmi.RemoteException;
     public t1708e.webservice.client.service.User findByUsername(java.lang.String arg0) throws java.rmi.RemoteException;
+    public java.lang.String login(java.lang.String arg0, java.lang.String arg1) throws java.rmi.RemoteException;
 }
