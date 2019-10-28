@@ -27,8 +27,8 @@
             <div class="col-xl-12">
                 <div class="card">
                     <h5 class="card-header d-flex justify-content-around">
-                        <span>Category List</span>
-                        <a th:href="@{category-create}" class="btn btn-primary pull-right w-25">Create</a>
+                        <span>Place List</span>
+                        <a th:href="@{place-create}" class="btn btn-primary pull-right w-25">Create</a>
                     </h5>
 
                     <div class="card-body">
@@ -41,11 +41,12 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr th:each="category : ${categories}">
-                                <th th:text="${category.id}"></th>
-                                <td th:text="${category.name}"></td>
+                            <tr th:each="place : ${places}">
+                                <!--/*@thymesVar id="placxe" type=""*/-->
+                                <th th:text="${place.id}"></th>
+                                <td th:text="${place.name}"></td>
                                 <td>
-                                    <a th:href="@{category-edit/} + ${category.id}" class="btn btn-warning">Edit</a>
+                                    <a th:href="@{place-edit/} + ${place.id}" class="btn btn-warning">Edit</a>
                                 </td>
                             </tr>
                             </tbody>
