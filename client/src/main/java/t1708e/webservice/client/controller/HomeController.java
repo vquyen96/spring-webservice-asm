@@ -13,6 +13,9 @@ import java.rmi.RemoteException;
 public class HomeController {
 
     @Autowired(required = false)
+    private AdminController adminController;
+
+    @Autowired(required = false)
     private SignUpService signUpService;
 
     @Autowired(required = false)
@@ -23,6 +26,7 @@ public class HomeController {
 
     @RequestMapping(value = {"/", "/home"}, method = RequestMethod.GET)
     public String index(Model model) throws RemoteException {
+        model.addAttribute("menu", AdminController.);
         return "index";
     }
 

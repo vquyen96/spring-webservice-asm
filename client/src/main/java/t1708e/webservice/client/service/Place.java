@@ -7,8 +7,11 @@
 
 package t1708e.webservice.client.service;
 
+import t1708e.webservice.client.entity.StatusEnum;
+
 public class Place  implements java.io.Serializable {
     private t1708e.webservice.client.service.Category category;
+    private int categoryId;
 
     private t1708e.webservice.client.service.CommentPlace[] commentPlaces;
 
@@ -35,6 +38,17 @@ public class Place  implements java.io.Serializable {
     private t1708e.webservice.client.service.User user;
 
     public Place() {
+    }
+
+    public Place(Category category, int id, String name, String summary, String description, User user) {
+        this.category = category;
+        this.description = description;
+        this.id = id;
+        this.name = name;
+        this.summary = summary;
+        this.user = user;
+        this.createdAt = System.currentTimeMillis();
+        this.status = StatusEnum.ACTIVE.name();
     }
 
     public Place(
@@ -86,6 +100,13 @@ public class Place  implements java.io.Serializable {
         this.category = category;
     }
 
+    public int getCategoryId() {
+        return categoryId;
+    }
+
+    public void setCategoryId(int categoryId) {
+        this.categoryId = categoryId;
+    }
 
     /**
      * Gets the commentPlaces value for this Place.

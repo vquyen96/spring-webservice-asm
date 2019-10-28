@@ -41,6 +41,15 @@ public class User  implements java.io.Serializable {
     public User() {
     }
 
+    public User(int id, String email, String urlImage, int role, String status) {
+        this.createdAt = System.currentTimeMillis();
+        this.email = email;
+        this.id = id;
+        this.role = role;
+        this.status = status;
+        this.urlImage = urlImage;
+    }
+
     public User(
            t1708e.webservice.client.service.CommentImage[] commentImages,
            t1708e.webservice.client.service.CommentPlace[] commentPlaces,
