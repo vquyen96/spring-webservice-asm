@@ -40,7 +40,7 @@ public class AdminController {
         categoryList.add(new Category(incrementCategory++, "Sapa"));
         categoryList.add(new Category(incrementCategory++, "Đà Nẵng"));
         categoryList.add(new Category(incrementCategory++, "Quy Nhơn"));
-        categoryList.add(new Category(incrementCategory++, "Quy Nhơn"));
+        categoryList.add(new Category(incrementCategory++, "Hoad Binhf"));
 
         User user1 = new User(incrementUser++,"vquyenaaa@gmail.com","", 1, StatusEnum.ACTIVE.name());
         users.add(user1);
@@ -111,7 +111,7 @@ public class AdminController {
         System.out.println(id);
         if (places.size() < id) return "redirect:/admin/place";
         Place place = places.get(id-1);
-        System.out.println(place.getName());
+        System.out.println(place.getCategory() != null ? place.getCategory().getName() : "Noneee");
         model.addAttribute("place", place);
         model.addAttribute("categories", categoryList);
         return "admin/place-edit";
@@ -122,6 +122,7 @@ public class AdminController {
         place.setId(incrementPlace++);
         User user = users.get(0);
         place.setUser(user);
+        place.setCategory(categoryList.get(place.getCategoryId()-1));
         places.add(place);
         return "redirect:/admin/place";
     }
@@ -131,6 +132,7 @@ public class AdminController {
         if (places.size() < id) return "redirect:/admin/place";
         User user = users.get(0);
         place.setUser(user);
+        place.setCategory(categoryList.get(place.getCategoryId()-1));
         places.set(id-1, place);
         return "redirect:/admin/place";
     }
@@ -138,5 +140,9 @@ public class AdminController {
     @RequestMapping(value = "/placeimage", method = RequestMethod.GET)
     public String placeImage(Model model) {
         return "admin/placeImage-form";
+    }
+
+    public List<Category> getCategories() {
+        return categoryList;
     }
 }
