@@ -113,19 +113,25 @@ public class AdminController {
         Place place = places.get(id-1);
         System.out.println(place.getName());
         model.addAttribute("place", place);
+        model.addAttribute("categories", categoryList);
         return "admin/place-edit";
     }
 
     @RequestMapping(value = "/place", method = RequestMethod.POST)
-    public String createPlace(Model model, Place place) {
+    public String storePlace(Model model, Place place) {
         place.setId(incrementPlace++);
-        System.out.println(place.getName());
-        System.out.println(place.getDescription());
-        Category category = categoryList.get(place.getCategoryId() - 1);
-        place.setCategory(category);
         User user = users.get(0);
         place.setUser(user);
         places.add(place);
+        return "redirect:/admin/place";
+    }
+
+    @RequestMapping(value = "/place-edit/{id}", method = RequestMethod.POST)
+    public String updatePlace(Model model, Place place, @PathVariable("id") int id) {
+        if (places.size() < id) return "redirect:/admin/place";
+        User user = users.get(0);
+        place.setUser(user);
+        places.set(id-1, place);
         return "redirect:/admin/place";
     }
 
