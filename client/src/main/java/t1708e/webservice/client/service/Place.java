@@ -80,6 +80,12 @@ public class Place  implements java.io.Serializable {
            this.user = user;
     }
 
+    public Place(long createdAt, float rating, String name, long updatedAt) {
+        this.createdAt = createdAt;
+        this.rating = rating;
+        this.name = name;
+        this.updatedAt = updatedAt;
+    }
 
     /**
      * Gets the category value for this Place.

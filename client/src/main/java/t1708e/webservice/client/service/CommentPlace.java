@@ -7,7 +7,7 @@
 
 package t1708e.webservice.client.service;
 
-public class CommentPlace  implements java.io.Serializable {
+public class    CommentPlace  implements java.io.Serializable {
     private java.lang.String content;
 
     private long createdAt;
@@ -22,7 +22,7 @@ public class CommentPlace  implements java.io.Serializable {
 
     private long updatedAt;
 
-    private t1708e.webservice.client.service.User user;
+    private User user;
 
     public CommentPlace() {
     }
@@ -44,6 +44,14 @@ public class CommentPlace  implements java.io.Serializable {
            this.title = title;
            this.updatedAt = updatedAt;
            this.user = user;
+    }
+
+    public CommentPlace(long createdAt, String user, String title, String content, String place) {
+        //this.user = user;
+        //this.place = place;
+        this.createdAt = createdAt;
+        this.title = title;
+        this.content = content;
     }
 
 
