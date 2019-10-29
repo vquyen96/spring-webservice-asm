@@ -25,8 +25,8 @@
                         </ul>
                     </div>
                     <div class="user_box ml-auto">
-                        <div class="user_box_login user_box_link"><a th:href="@{login}">login</a></div>
-                        <div class="user_box_register user_box_link"><a th:href="@{register}">register</a></div>
+                        <div class="user_box_login user_box_link"><a th:href="@{/login}">login</a></div>
+                        <div class="user_box_register user_box_link"><a th:href="@{/register}">register</a></div>
                     </div>
                 </div>
             </div>
@@ -40,15 +40,15 @@
             <div class="row">
                 <div class="col main_nav_col d-flex flex-row align-items-center justify-content-start">
                     <div class="logo_container">
-                        <div class="logo"><a href="#"><img src="../../static/images/logo.png" alt="">travelix</a></div>
+                        <div class="logo"><a th:href="@{/}" ><img src="../../static/images/logo.png" alt="">travelix</a></div>
                     </div>
                     <div class="main_nav_container ml-auto">
                         <ul class="main_nav_list">
-                            <li class="main_nav_item"><a th:href="home">home</a></li>
-                            <li class="main_nav_item"><a th:href="about">about us</a></li>
-                            <li class="main_nav_item"><a th:href="offers">offers</a></li>
-                            <li class="main_nav_item"><a th:href="blog">news</a></li>
-                            <li class="main_nav_item"><a th:href="contact">contact</a></li>
+                            <li class="main_nav_item"><a th:href="@{/}">home</a></li>
+                            <li class="main_nav_item"><a th:href="@{/about}">about us</a></li>
+                            <li class="main_nav_item"><a th:href="@{/offers}">offers</a></li>
+                            <li class="main_nav_item"><a th:href="@{/blog}">news</a></li>
+                            <li class="main_nav_item"><a th:href="@{/contact}">contact</a></li>
                         </ul>
                     </div>
                     <div class="content_search ml-lg-0 ml-auto">

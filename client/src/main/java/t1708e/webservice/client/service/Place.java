@@ -9,6 +9,9 @@ package t1708e.webservice.client.service;
 
 import t1708e.webservice.client.entity.StatusEnum;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class Place  implements java.io.Serializable {
     private t1708e.webservice.client.service.Category category;
     private int categoryId;
@@ -23,7 +26,7 @@ public class Place  implements java.io.Serializable {
 
     private java.lang.String name;
 
-    private t1708e.webservice.client.service.PlaceImage[] placeImages;
+    private List<PlaceImage> placeImages;
 
     private t1708e.webservice.client.service.RatePlace[] ratePlaces;
 
@@ -37,16 +40,38 @@ public class Place  implements java.io.Serializable {
 
     private t1708e.webservice.client.service.User user;
 
+    private int price;
+    private String address;
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
     public Place() {
     }
 
-    public Place(Category category, int id, String name, String summary, String description, User user) {
+    public Place(Category category, int id, String name, String summary, String description, User user, float rating, int price, String address) {
         this.category = category;
         this.description = description;
         this.id = id;
         this.name = name;
         this.summary = summary;
         this.user = user;
+        this.rating = rating;
+        this.price = price;
+        this.address = address;
         this.createdAt = System.currentTimeMillis();
         this.status = StatusEnum.ACTIVE.name();
     }
@@ -71,7 +96,7 @@ public class Place  implements java.io.Serializable {
            this.description = description;
            this.id = id;
            this.name = name;
-           this.placeImages = placeImages;
+           this.placeImages = Arrays.asList(placeImages);
            this.ratePlaces = ratePlaces;
            this.rating = rating;
            this.status = status;
@@ -227,7 +252,7 @@ public class Place  implements java.io.Serializable {
      * 
      * @return placeImages
      */
-    public t1708e.webservice.client.service.PlaceImage[] getPlaceImages() {
+    public List<PlaceImage> getPlaceImages() {
         return placeImages;
     }
 
@@ -237,16 +262,16 @@ public class Place  implements java.io.Serializable {
      * 
      * @param placeImages
      */
-    public void setPlaceImages(t1708e.webservice.client.service.PlaceImage[] placeImages) {
+    public void setPlaceImages(List<PlaceImage> placeImages) {
         this.placeImages = placeImages;
     }
 
     public t1708e.webservice.client.service.PlaceImage getPlaceImages(int i) {
-        return this.placeImages[i];
+        return this.placeImages.get(i);
     }
 
     public void setPlaceImages(int i, t1708e.webservice.client.service.PlaceImage _value) {
-        this.placeImages[i] = _value;
+        this.placeImages.set(i, _value);
     }
 
 
@@ -405,7 +430,7 @@ public class Place  implements java.io.Serializable {
               this.name.equals(other.getName()))) &&
             ((this.placeImages==null && other.getPlaceImages()==null) || 
              (this.placeImages!=null &&
-              java.util.Arrays.equals(this.placeImages, other.getPlaceImages()))) &&
+              true)) &&
             ((this.ratePlaces==null && other.getRatePlaces()==null) || 
              (this.ratePlaces!=null &&
               java.util.Arrays.equals(this.ratePlaces, other.getRatePlaces()))) &&
