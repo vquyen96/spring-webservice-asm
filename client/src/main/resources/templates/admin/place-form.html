@@ -35,16 +35,16 @@
                                 <div class="card-body">
                                     <form th:action="@{/admin/place}" method="post" th:object="${place}">
                                         <div class="form-group">
-                                            <label th:field="*{name}" class="col-form-label">Name</label>
-                                            <input type="text" class="form-control">
+                                            <label class="col-form-label">Name</label>
+                                            <input th:field="*{name}" type="text" class="form-control">
                                         </div>
                                         <div class="form-group">
-                                            <label th:field="*{summary}" class="col-form-label">Summary</label>
-                                            <input type="text" class="form-control">
+                                            <label class="col-form-label">Summary</label>
+                                            <textarea th:field="*{summary}" type="text" class="form-control" rows="3"></textarea>
                                         </div>
                                         <div class="form-group">
-                                            <label th:field="*{description}" class="col-form-label">Description</label>
-                                            <input type="text" class="form-control">
+                                            <label class="col-form-label">Description</label>
+                                            <textarea th:field="*{description}" type="text" class="form-control" rows="5"></textarea>
                                         </div>
                                         <div class="form-group">
                                             <label class="col-form-label">Rate</label>
