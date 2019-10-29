@@ -26,7 +26,8 @@ public class PlaceImage  implements java.io.Serializable {
 
     private java.lang.String urlIma;
 
-    public PlaceImage() {
+    public  PlaceImage(){
+
     }
 
     public PlaceImage(

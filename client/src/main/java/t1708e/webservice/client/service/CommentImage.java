@@ -46,6 +46,11 @@ public class CommentImage  implements java.io.Serializable {
            this.user = user;
     }
 
+    public CommentImage(String content, String title) {
+        this.content = content;
+        this.title = title;
+    }
+
 
     /**
      * Gets the content value for this CommentImage.
