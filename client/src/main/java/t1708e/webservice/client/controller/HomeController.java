@@ -24,9 +24,10 @@ public class HomeController {
     @Autowired(required = false)
     private SignInService signInService;
 
+
     @RequestMapping(value = {"/", "/home"}, method = RequestMethod.GET)
     public String index(Model model) throws RemoteException {
-//        model.addAttribute("menu", AdminController.);
+//        model.addAttribute("menu", "");
         return "index";
     }
 
