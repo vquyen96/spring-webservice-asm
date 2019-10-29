@@ -5,6 +5,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import t1708e.webservice.client.service.*;
+import t1708e.webservice.client.serviceData.CategoryService;
+import t1708e.webservice.client.serviceData.PlaceService;
+import t1708e.webservice.client.serviceData.UserService;
 
 import java.rmi.RemoteException;
 import java.util.ArrayList;
@@ -15,25 +18,44 @@ import java.util.List;
 public class HomeController {
 
     @Autowired(required = false)
-    private AdminController adminController;
-
-    @Autowired(required = false)
     private SignUpService signUpService;
 
-    @Autowired(required = false)
     private CategoryService categoryService;
+
+    private UserService userService;
+
+    private PlaceService placeService;
 
     @Autowired(required = false)
     private SignInService signInService;
 
+    public HomeController() {
+        categoryService = new CategoryService();
+        userService = new UserService();
+        placeService = new PlaceService();
+    }
 
     @RequestMapping(value = {"/", "/home"}, method = RequestMethod.GET)
-    public String index(Model model) throws RemoteException {
-//        model.addAttribute("menu", AdminController.);
+    public String index(Model model){
+//        System.out.println(categoryService.findAll());
+        model.addAttribute("menu", categoryService.findAll());
+        model.addAttribute("bestPlaces", placeService.findAll().subList(0, 3));
         model.addAttribute("listPlace", this.initList());
         model.addAttribute("cmtPlaceList", this.cmtPlaceList());
         model.addAttribute("cmtImageList", this.cmtImageList());
         return "index";
+    }
+
+    @RequestMapping(value = "/place/{id}", method = RequestMethod.GET)
+    public String PlaceDetail(Model model, @PathVariable("id") int id) {
+        System.out.println("BG");
+        Place place = placeService.findById(id);
+        System.out.println(place.getPlaceImages().size());
+        if (place == null) {
+            return "redirect:/home";
+        }
+        model.addAttribute("place", place);
+        return "place_detail";
     }
 
     public List<Place> initList() {

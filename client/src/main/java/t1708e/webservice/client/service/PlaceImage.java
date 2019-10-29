@@ -30,6 +30,15 @@ public class PlaceImage  implements java.io.Serializable {
 
     }
 
+    public PlaceImage(int id, Place place, String urlIma, float rating, String status) {
+        this.id = id;
+        this.place = place;
+        this.urlIma = urlIma;
+        this.rating = rating;
+        this.status = status;
+        this.createdAt = System.currentTimeMillis();
+    }
+
     public PlaceImage(
            t1708e.webservice.client.service.CommentImage[] commentImages,
            long createdAt,
