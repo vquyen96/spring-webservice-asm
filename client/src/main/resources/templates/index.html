@@ -379,7 +379,7 @@
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <h2 class="intro_title text-center">We have the best tours</h2>
+                    <h2 class="intro_title text-center">We have the best places.</h2>
                 </div>
             </div>
             <div class="row">
@@ -393,18 +393,18 @@
 
                 <!-- Intro Item -->
 
-                <div class="col-lg-4 intro_col">
+                <div class="col-lg-4 intro_col" th:each="place :${listPlace}">
                     <div class="intro_item">
                         <div class="intro_item_overlay"></div>
                         <!-- Image by https://unsplash.com/@dnevozhai -->
                         <div class="intro_item_background" style="background-image:url(images/intro_1.jpg)"></div>
                         <div class="intro_item_content d-flex flex-column align-items-center justify-content-center">
-                            <div class="intro_date">May 25th - June 01st</div>
+                            <div class="intro_date" th:text="${place.createdAt} + ' - ' + ${place.updatedAt}"></div>
                             <div class="button intro_button"><div class="button_bcg"></div><a href="#">see more<span></span><span></span><span></span></a></div>
                             <div class="intro_center text-center">
-                                <h1>Mauritius</h1>
+                                <h1 th:text="${place.name}"></h1>
                                 <div class="intro_price">From $1450</div>
-                                <div class="rating rating_4">
+                                <div class="rating rating_4" th:text="${place.rating}">
                                     <i class="fa fa-star"></i>
                                     <i class="fa fa-star"></i>
                                     <i class="fa fa-star"></i>
@@ -415,57 +415,6 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Intro Item -->
-
-                <div class="col-lg-4 intro_col">
-                    <div class="intro_item">
-                        <div class="intro_item_overlay"></div>
-                        <!-- Image by https://unsplash.com/@hellolightbulb -->
-                        <div class="intro_item_background" style="background-image:url(images/intro_2.jpg)"></div>
-                        <div class="intro_item_content d-flex flex-column align-items-center justify-content-center">
-                            <div class="intro_date">May 25th - June 01st</div>
-                            <div class="button intro_button"><div class="button_bcg"></div><a href="#">see more<span></span><span></span><span></span></a></div>
-                            <div class="intro_center text-center">
-                                <h1>Greece</h1>
-                                <div class="intro_price">From $1450</div>
-                                <div class="rating rating_4">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Intro Item -->
-
-                <div class="col-lg-4 intro_col">
-                    <div class="intro_item">
-                        <div class="intro_item_overlay"></div>
-                        <!-- Image by https://unsplash.com/@willianjusten -->
-                        <div class="intro_item_background" style="background-image:url(images/intro_3.jpg)"></div>
-                        <div class="intro_item_content d-flex flex-column align-items-center justify-content-center">
-                            <div class="intro_date">May 25th - June 01st</div>
-                            <div class="button intro_button"><div class="button_bcg"></div><a href="#">see more<span></span><span></span><span></span></a></div>
-                            <div class="intro_center text-center">
-                                <h1>Scotland</h1>
-                                <div class="intro_price">From $1450</div>
-                                <div class="rating rating_4">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
     </div>
@@ -479,15 +428,14 @@
         <div class="container">
             <div class="row">
                 <div class="col">
-
                     <!-- CTA Slider -->
 
                     <div class="cta_slider_container">
                         <div class="owl-carousel owl-theme cta_slider">
 
                             <!-- CTA Slider Item -->
-                            <div class="owl-item cta_item text-center">
-                                <div class="cta_title">maldives deluxe package</div>
+                            <div class="owl-item cta_item text-center" th:each="CommentImage :${cmtImageList}">
+                                <div class="cta_title" th:text="${CommentImage.title}"></div>
                                 <div class="rating_r rating_r_4">
                                     <i></i>
                                     <i></i>
@@ -495,37 +443,12 @@
                                     <i></i>
                                     <i></i>
                                 </div>
-                                <p class="cta_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu convallis tortor. Suspendisse potenti. In faucibus massa arcu, vitae cursus mi hendrerit nec. Proin bibendum, augue faucibus tincidunt ultrices, tortor augue gravida lectus, et efficitur enim justo vel ligula.</p>
+                                <p class="cta_text" th:text="${CommentImage.content}"></p>
                                 <div class="button cta_button"><div class="button_bcg"></div><a href="#">book now<span></span><span></span><span></span></a></div>
                             </div>
 
                             <!-- CTA Slider Item -->
-                            <div class="owl-item cta_item text-center">
-                                <div class="cta_title">maldives deluxe package</div>
-                                <div class="rating_r rating_r_4">
-                                    <i></i>
-                                    <i></i>
-                                    <i></i>
-                                    <i></i>
-                                    <i></i>
-                                </div>
-                                <p class="cta_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu convallis tortor. Suspendisse potenti. In faucibus massa arcu, vitae cursus mi hendrerit nec. Proin bibendum, augue faucibus tincidunt ultrices, tortor augue gravida lectus, et efficitur enim justo vel ligula.</p>
-                                <div class="button cta_button"><div class="button_bcg"></div><a href="#">book now<span></span><span></span><span></span></a></div>
-                            </div>
 
-                            <!-- CTA Slider Item -->
-                            <div class="owl-item cta_item text-center">
-                                <div class="cta_title">maldives deluxe package</div>
-                                <div class="rating_r rating_r_4">
-                                    <i></i>
-                                    <i></i>
-                                    <i></i>
-                                    <i></i>
-                                    <i></i>
-                                </div>
-                                <p class="cta_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu convallis tortor. Suspendisse potenti. In faucibus massa arcu, vitae cursus mi hendrerit nec. Proin bibendum, augue faucibus tincidunt ultrices, tortor augue gravida lectus, et efficitur enim justo vel ligula.</p>
-                                <div class="button cta_button"><div class="button_bcg"></div><a href="#">book now<span></span><span></span><span></span></a></div>
-                            </div>
 
                         </div>
 
@@ -753,110 +676,19 @@
 
                     <div class="test_slider_container">
                         <div class="owl-carousel owl-theme test_slider">
-
                             <!-- Testimonial Item -->
-                            <div class="owl-item">
+                            <div class="owl-item" th:each="CommentPlace :${cmtPlaceList}">
                                 <div class="test_item">
                                     <div class="test_image"><img src="images/test_1.jpg" alt="https://unsplash.com/@anniegray"></div>
                                     <div class="test_icon"><img src="images/backpack.png" alt=""></div>
                                     <div class="test_content_container">
                                         <div class="test_content">
                                             <div class="test_item_info">
-                                                <div class="test_name">carla smith</div>
-                                                <div class="test_date">May 24, 2017</div>
+                                                <div class="test_name" th:text="@{CommentPlace.user}">carla smith</div>
+                                                <div class="test_date" th:text="${CommentPlace.createdAt}"></div>
                                             </div>
-                                            <div class="test_quote_title">" Best holliday ever "</div>
-                                            <p class="test_quote_text">Nullam eu convallis tortor. Suspendisse potenti. In faucibus massa arcu, vitae cursus mi hendrerit nec.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Testimonial Item -->
-                            <div class="owl-item">
-                                <div class="test_item">
-                                    <div class="test_image"><img src="images/test_2.jpg" alt="https://unsplash.com/@tschax"></div>
-                                    <div class="test_icon"><img src="images/island_t.png" alt=""></div>
-                                    <div class="test_content_container">
-                                        <div class="test_content">
-                                            <div class="test_item_info">
-                                                <div class="test_name">carla smith</div>
-                                                <div class="test_date">May 24, 2017</div>
-                                            </div>
-                                            <div class="test_quote_title">" Best holliday ever "</div>
-                                            <p class="test_quote_text">Nullam eu convallis tortor. Suspendisse potenti. In faucibus massa arcu, vitae cursus mi hendrerit nec.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Testimonial Item -->
-                            <div class="owl-item">
-                                <div class="test_item">
-                                    <div class="test_image"><img src="images/test_3.jpg" alt="https://unsplash.com/@seefromthesky"></div>
-                                    <div class="test_icon"><img src="images/kayak.png" alt=""></div>
-                                    <div class="test_content_container">
-                                        <div class="test_content">
-                                            <div class="test_item_info">
-                                                <div class="test_name">carla smith</div>
-                                                <div class="test_date">May 24, 2017</div>
-                                            </div>
-                                            <div class="test_quote_title">" Best holliday ever "</div>
-                                            <p class="test_quote_text">Nullam eu convallis tortor. Suspendisse potenti. In faucibus massa arcu, vitae cursus mi hendrerit nec.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Testimonial Item -->
-                            <div class="owl-item">
-                                <div class="test_item">
-                                    <div class="test_image"><img src="images/test_2.jpg" alt=""></div>
-                                    <div class="test_icon"><img src="images/island_t.png" alt=""></div>
-                                    <div class="test_content_container">
-                                        <div class="test_content">
-                                            <div class="test_item_info">
-                                                <div class="test_name">carla smith</div>
-                                                <div class="test_date">May 24, 2017</div>
-                                            </div>
-                                            <div class="test_quote_title">" Best holliday ever "</div>
-                                            <p class="test_quote_text">Nullam eu convallis tortor. Suspendisse potenti. In faucibus massa arcu, vitae cursus mi hendrerit nec.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Testimonial Item -->
-                            <div class="owl-item">
-                                <div class="test_item">
-                                    <div class="test_image"><img src="images/test_1.jpg" alt=""></div>
-                                    <div class="test_icon"><img src="images/backpack.png" alt=""></div>
-                                    <div class="test_content_container">
-                                        <div class="test_content">
-                                            <div class="test_item_info">
-                                                <div class="test_name">carla smith</div>
-                                                <div class="test_date">May 24, 2017</div>
-                                            </div>
-                                            <div class="test_quote_title">" Best holliday ever "</div>
-                                            <p class="test_quote_text">Nullam eu convallis tortor. Suspendisse potenti. In faucibus massa arcu, vitae cursus mi hendrerit nec.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Testimonial Item -->
-                            <div class="owl-item">
-                                <div class="test_item">
-                                    <div class="test_image"><img src="images/test_3.jpg" alt=""></div>
-                                    <div class="test_icon"><img src="images/kayak.png" alt=""></div>
-                                    <div class="test_content_container">
-                                        <div class="test_content">
-                                            <div class="test_item_info">
-                                                <div class="test_name">carla smith</div>
-                                                <div class="test_date">May 24, 2017</div>
-                                            </div>
-                                            <div class="test_quote_title">" Best holliday ever "</div>
-                                            <p class="test_quote_text">Nullam eu convallis tortor. Suspendisse potenti. In faucibus massa arcu, vitae cursus mi hendrerit nec.</p>
+                                            <div class="test_quote_title" th:text="${CommentPlace.title}"></div>
+                                            <p class="test_quote_text" th:text="${CommentPlace.content}"></p>
                                         </div>
                                     </div>
                                 </div>
